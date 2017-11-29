@@ -1,6 +1,7 @@
 package content_reader;
 
 import org.apache.tika.exception.TikaException;
+import org.apache.tika.language.LanguageIdentifier;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.microsoft.ooxml.OOXMLParser;
@@ -12,8 +13,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/* leest PPTX.XLSX.DOCX.*/
+
 public class Apacke_Tika_Docx {
-    public String result(String path) throws IOException, TikaException, SAXException {
+
+    public String readFile(String path) throws IOException, TikaException, SAXException {
 
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
@@ -25,12 +29,16 @@ public class Apacke_Tika_Docx {
 
         ooxml.parse(inputstream, handler, metadata, pcontext);
 
-        //getting the content of the document
-        String output = "Contents of the PDF :" +handler.toString();
-        return (output);
+            String output = handler.toString();
+
+        LanguageIdentifier identifier = new LanguageIdentifier(output);
+        String language = identifier.getLanguage();
+        System.out.println("Language of the given content is : " + language);
+
+        return ("Contents of the PDF :" + output);
     }
     public static void main(String[] args) throws TikaException, SAXException, IOException {
         Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
-        System.out.println(apacke_tika_docx.result("src\\main\\resources\\Docx.docx"));
+        System.out.println(apacke_tika_docx.readFile("src\\main\\resources\\Docx.docx")); /* leest PPTX.XLSX.DOCX.*/
     }
 }

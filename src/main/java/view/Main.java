@@ -17,7 +17,7 @@ public class Main {
         Docx object = new Docx();
 
         Classifying_Content classifying_content = new Classifying_Content();
-        classifying_content.classifyFile(apt.result("src\\main\\resources\\Tetris-PDF.pdf"));
+        classifying_content.classifyFile(apt.readFile("src\\main\\resources\\Tetris-PDF.pdf"));
 //            object.toString();
         //System.out.println(object.toString());
     }

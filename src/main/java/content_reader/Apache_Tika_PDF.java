@@ -16,7 +16,7 @@ import org.xml.sax.SAXException;
 
         //public static void main(final String[] args) throws IOException, TikaException, SAXException {
 
-        public String result(String path) throws IOException, TikaException, SAXException {
+        public String readFile(String path) throws IOException, TikaException, SAXException {
 
             BodyContentHandler handler = new BodyContentHandler();
             Metadata metadata = new Metadata();
@@ -28,7 +28,6 @@ import org.xml.sax.SAXException;
 
             pdfparser.parse(inputstream, handler, metadata, pcontext);
 
-
                 String output = handler.toString();
 
             LanguageIdentifier identifier = new LanguageIdentifier(output);
@@ -38,9 +37,9 @@ import org.xml.sax.SAXException;
             return ("Contents of the PDF :" + output);
     }
 
-        public static void main(String[] args) throws TikaException, IOException, SAXException {
-            Apache_Tika_PDF p = new Apache_Tika_PDF();
-            System.out.println(p.result("src\\main\\resources\\nlPDF.pdf"));
-           // System.out.println(p.result());
-        }
+//        public static void main(String[] args) throws TikaException, IOException, SAXException {
+//            Apache_Tika_PDF p = new Apache_Tika_PDF();
+//            System.out.println(p.readFile("src\\main\\resources\\Tetris-PDF.pdf"));
+//           // System.out.println(p.result());
+//        }
     }

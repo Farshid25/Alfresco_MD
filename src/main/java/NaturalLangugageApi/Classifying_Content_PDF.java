@@ -39,14 +39,6 @@ public class Classifying_Content_PDF {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-
- Apache_Tika_PDF pd = new Apache_Tika_PDF();
-
-        classifyFile(pd.result("src\\main\\resources\\Tetris-PDF.pdf"));
-//            object.toString();
-
-    }
 }
 
 
