@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Apache_Tika_XML {
 
 
-        public String result(String pad) throws IOException, SAXException, TikaException {
+        public String readFile(String pad) throws IOException, SAXException, TikaException {
 
             //detecting the file type
             BodyContentHandler handler = new BodyContentHandler();
@@ -32,7 +32,7 @@ public class Apache_Tika_XML {
 
         public static void main(String[] args) throws TikaException, SAXException, IOException {
            Apache_Tika_XML apache_tika_xml  = new Apache_Tika_XML();
-            System.out.println(apache_tika_xml.result("src\\main\\resources\\Hello.xml"));
+            System.out.println(apache_tika_xml.readFile("src\\main\\resources\\Hello.xml"));
         }
     }
 

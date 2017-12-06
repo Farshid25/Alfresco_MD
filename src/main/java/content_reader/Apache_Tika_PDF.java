@@ -37,9 +37,9 @@ import org.xml.sax.SAXException;
             return ("Contents of the PDF :" + output);
     }
 
-//        public static void main(String[] args) throws TikaException, IOException, SAXException {
-//            Apache_Tika_PDF p = new Apache_Tika_PDF();
-//            System.out.println(p.readFile("src\\main\\resources\\Tetris-PDF.pdf"));
-//           // System.out.println(p.result());
-//        }
+        public static void main(String[] args) throws TikaException, IOException, SAXException {
+            Apache_Tika_PDF p = new Apache_Tika_PDF();
+            System.out.println(p.readFile("src\\main\\resources\\Tetris-PDF.pdf"));
+           // System.out.println(p.result());
+        }
     }

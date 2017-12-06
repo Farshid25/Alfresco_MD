@@ -1,1 +1,7 @@
-Farshid is very happy And satisfied.
+Tetris
+Tetris is a surprising game. On paper, at least, it seems unlikely that something so basic should
+have done so well beyond the year 1975. Nevertheless, it’s been a consistently popular video
+game for decades. It was invented in Russia, and it was never expected to be as popular as it
+became. Yet, the reason it is so popular is that it meets the key criteria for fun in a game. That is,
+it has goals, rules, feedback, participation is voluntary, and there are unnecessary obstacles that
+keep the game challenging.

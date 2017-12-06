@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class Apache_Tika_TEXT {
 
-    public String result(String path) throws IOException, TikaException, SAXException {
+    public String readFile(String path) throws IOException, TikaException, SAXException {
 
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
@@ -32,6 +32,6 @@ public class Apache_Tika_TEXT {
 
     public static void main(String[] args) throws TikaException, SAXException, IOException {
     Apache_Tika_TEXT apache_tika_text = new Apache_Tika_TEXT();
-        System.out.println(apache_tika_text.result("src\\main\\resources\\Txt.txt"));
+        System.out.println(apache_tika_text.readFile("src\\main\\resources\\Txt.txt"));
     }
 }

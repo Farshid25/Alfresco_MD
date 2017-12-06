@@ -14,7 +14,7 @@ import org.xml.sax.SAXException;
 
     public class Apache_Tika_ODT {
 
-        public String result(String pad) throws IOException, SAXException, TikaException {
+        public String readFile(String pad) throws IOException, SAXException, TikaException {
 
             //detecting the file type
             BodyContentHandler handler = new BodyContentHandler();
@@ -31,6 +31,6 @@ import org.xml.sax.SAXException;
 
         public static void main(String[] args) throws TikaException, SAXException, IOException {
             Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
-            System.out.println(apache_tika_odt.result("src\\main\\resources\\ODT.odt"));
+            System.out.println(apache_tika_odt.readFile("src\\main\\resources\\ODT.odt"));
         }
     }

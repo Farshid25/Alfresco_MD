@@ -12,8 +12,10 @@ import com.google.cloud.language.v1.LanguageServiceClient;
 
 import java.util.Map;
 
-public class Analyze_EntitiesText {
-    public static void analyzeEntitiesText(String text) throws Exception {
+import content_reader.*;
+
+public class Analyze_Entities {
+    public void analyzeEntities(String text) throws Exception {
 
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
             Document doc = Document.newBuilder()
@@ -27,24 +29,29 @@ public class Analyze_EntitiesText {
 
             AnalyzeEntitiesResponse response = language.analyzeEntities(request);
         for (Entity entity : response.getEntitiesList()) {
-            System.out.printf("Entity: %s", entity.getName());
+
+            System.out.printf("Entity: %s\n", entity.getName());
+            System.out.printf("Type: %s\n", entity.getType()); //person
             System.out.printf("Salience: %.3f\n", entity.getSalience());
-            System.out.println("Metadata: ");
-            for (Map.Entry<String, String> entry : entity.getMetadataMap().entrySet()) {
-                System.out.printf("%s : %s", entry.getKey(), entry.getValue());
-            }
+//            System.out.println("Metadata: ");
+//            for (Map.Entry<String, String> entry : entity.getMetadataMap().entrySet()) {
+//                System.out.printf("%s : %s", entry.getKey(), entry.getValue());
+//            }
             for (EntityMention mention : entity.getMentionsList()) {
-                System.out.printf("Begin offset: %d\n", mention.getText().getBeginOffset());
-                System.out.printf("Content: %s\n", mention.getText().getContent());
-                System.out.printf("Type: %s\n\n", mention.getType());
+
+//                System.out.printf("Content: %s\n", mention.getText().getContent());           // alleen zinnin i.c.m. Sentences, anders geen input.
+                System.out.printf("Type: %s\n\n", mention.getType()); //common/proper
             }
         }
     }
     }
 
     public static void main(String[] args) throws Exception {
-        analyzeEntitiesText("\"src\\main\\resources\\NewFafa(Docx).docx");//"//farshid is a very handsome man and happy");
-        //System.out.println(test("src\\main\\resources\\NewFafa(Docx).docx"));
+        Analyze_Entities analyze_entitiesText = new Analyze_Entities();
+//        Apache_Tika_PDF pdfReader = new Apache_Tika_PDF();
+//        analyze_entitiesText.analyzeEntities(pdfReader.readFile("src\\main\\Aanvullende_Files\\poem.pdf"));
 
+        Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
+        analyze_entitiesText.analyzeEntities(docxReader.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
     }
 }

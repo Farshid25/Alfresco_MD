@@ -6,28 +6,29 @@ import content_reader.Apache_Poi_DocxTest;
 import content_reader.Apache_Tika_PDF;
 import content_reader.Apacke_Tika_Docx;
 import model.Docx;
+import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
 
 
 public class Classifying_Content {
 
         public void classifyFile(String path /*, Docx object*/) throws Exception {
-            //Apache_Poi_DocxTest ap = new Apache_Poi_DocxTest();
+
             String text = "";
-            // [START classify_file]
-            // Instantiate a beta client : com.google.cloud.language.v1beta2.LanguageServiceClient
+
+
             try (LanguageServiceClient language = LanguageServiceClient.create()) {
-                // set the GCS content URI path
 
                 Document doc = Document.newBuilder()
-                        //.setContent(ap.readFile(path))
+
                         .setContent(path)
                         .setType(Document.Type.PLAIN_TEXT)
                         .build();
                 ClassifyTextRequest request = ClassifyTextRequest.newBuilder()
                         .setDocument(doc)
                         .build();
-                // detect categories in the given file
+
                 ClassifyTextResponse response = language.classifyText(request);
+
 
                 for (ClassificationCategory category : response.getCategoriesList()) {
 //                    System.out.printf("Category name : %s, Confidence : %.3f\n",
@@ -51,7 +52,7 @@ public class Classifying_Content {
         Apache_Tika_PDF pdf = new Apache_Tika_PDF();
         Apacke_Tika_Docx ap = new Apacke_Tika_Docx();
 
-        cf.classifyFile(ap.readFile("src\\main\\resources\\Serkan.docx"));
+        cf.classifyFile(ap.readFile("src\\main\\Aanvullende_Files\\Sollicitatie2.docx\\"));
     }
     }
 

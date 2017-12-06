@@ -1,5 +1,6 @@
 package content_reader;
 
+//import org.apache.tika.exception.TikaException;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.language.LanguageIdentifier;
 import org.apache.tika.metadata.Metadata;
@@ -33,12 +34,13 @@ public class Apacke_Tika_Docx {
 
         LanguageIdentifier identifier = new LanguageIdentifier(output);
         String language = identifier.getLanguage();
-        System.out.println("Language of the given content is : " + language);
+        System.out.printf("Language of the given content is: %s",language); System.out.println("\n");
+
 
         return ("Contents of the PDF :" + output);
     }
     public static void main(String[] args) throws TikaException, SAXException, IOException {
         Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
-        System.out.println(apacke_tika_docx.readFile("src\\main\\resources\\Docx.docx")); /* leest PPTX.XLSX.DOCX.*/
+        System.out.println(apacke_tika_docx.readFile("src\\main\\Aanvullende_Files\\test1.docx")); /* leest PPTX.XLSX.DOCX.*/
     }
 }
