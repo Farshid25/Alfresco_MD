@@ -3,40 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="17529772-be44-4eb8-855c-09e57f5f2411" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_Tika_Tika_core_1_16.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifiying_File.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content_PDF.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Entitys_test.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Entitys_test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Handmatig_ReadText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Analyze_EntitiesText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Classifiying_File.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Classifying_Content.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Classifying_Content_PDF.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Type_Read_Switch/TypeDetection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Poi_DocxTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Poi_OfficeExcel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Tika_ODT.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Tika_PDF.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Tika_TEXT.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apache_Tika_XML.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apacke_Tika_Docx.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/model/Docx.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/view/Main.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitiesText.java" afterPath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Docx.docx" afterPath="$PROJECT_DIR$/src/main/resources/Docx.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/ODT.odt" afterPath="$PROJECT_DIR$/src/main/resources/ODT.odt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Docx.docx" afterPath="$PROJECT_DIR$/target/classes/Docx.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ODT.odt" afterPath="$PROJECT_DIR$/target/classes/ODT.odt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Analyze_Entities.class" afterPath="$PROJECT_DIR$/target/classes/NaturalLangugageApi/Analyze_Entities.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/content_reader/Apacke_Tika_Docx.class" afterPath="$PROJECT_DIR$/target/classes/content_reader/Apacke_Tika_Docx.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Alfresco-MD.iml" afterPath="$PROJECT_DIR$/Alfresco-MD.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content.java" afterPath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Type_Read_Switch/TypeDetection.java" afterPath="$PROJECT_DIR$/src/main/java/Type_Read_Switch/TypeDetection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_ODT.java" afterPath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_ODT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java" afterPath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_TEXT.java" afterPath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_TEXT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java" afterPath="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java" afterPath="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java" afterPath="$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Txt.txt" afterPath="$PROJECT_DIR$/src/main/resources/Txt.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Txt.txt" afterPath="$PROJECT_DIR$/target/classes/Txt.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,21 +38,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TypeDetection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Type_Read_Switch/TypeDetection.java">
+      <file leaf-file-name="AnalyzeEntity_MS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeEntity_MS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/RestTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-64">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="24" />
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Classifying_Content.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content.java">
+      <file leaf-file-name="Apache_Tika_XML.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="32">
+              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="944">
+              <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handmatig_ReadText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Handmatig_ReadText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalyzeSentiment_MS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeSentiment_MS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1280">
+              <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,25 +114,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Analyze_Entities.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java">
+      <file leaf-file-name="AnalyzeLanguage_MS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeLanguage_MS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+            <state relative-caret-position="656">
+              <caret line="46" column="55" lean-forward="true" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Analyze_Syntax.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Syntax.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1119#1120#0" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,43 +131,11 @@
       <file leaf-file-name="Analyze_Sentiment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Sentiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="4" column="50" lean-forward="true" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Analyze_EntitySentiment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitySentiment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Apacke_Tika_Docx.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="43" column="89" lean-forward="false" selection-start-line="43" selection-start-column="89" selection-end-line="43" selection-end-column="89" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Apache_Tika_PDF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -182,17 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/test/OfficeTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/OfficeExcel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/PptxTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Pad.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/PdfTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/DocxTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Pad_test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/QuickstartSample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entitys_test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/Apache_POI_OfficeExcel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Docx.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Aziz_test.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Document.java" />
@@ -224,15 +200,26 @@
         <option value="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_TEXT.java" />
         <option value="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java" />
         <option value="$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Type_Read_Switch/TypeDetection.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitiesText.java" />
-        <option value="$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Syntax.java" />
-        <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Sentiment.java" />
         <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitySentiment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalytics/First.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalytics/Document.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalytics/AnalyzeEntities_MS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeEntities_MS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/Document.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeLanguage_MS" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeEntity_MS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeLanguage_MS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeSentiment_MS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TextAnalyticsApi/RestTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -250,9 +237,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="408" />
-    <option name="width" value="960" />
-    <option name="height" value="728" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -286,7 +274,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,6 +336,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TextAnalyticsApi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Alfresco-MD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Alfresco-MD" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Type_Read_Switch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -374,8 +369,9 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,15 +405,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Analyze_Sentiment">
-    <configuration name="Analyze_Entities" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.RestTest$GetKeyPhrases">
+    <configuration name="AnalyzeEntity_MS$GetKeyPhrases" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="NaturalLangugageApi.*" />
+          <option name="PATTERN" value="TextAnalyticsApi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="NaturalLangugageApi.Analyze_Entities" />
+      <option name="MAIN_CLASS_NAME" value="TextAnalyticsApi.AnalyzeEntity_MS$GetKeyPhrases" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -429,14 +425,14 @@
       <module name="Alfresco-MD" />
       <envs />
     </configuration>
-    <configuration name="Analyze_EntitySentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="AnalyzeLanguage_MS$DetectLanguage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="NaturalLangugageApi.*" />
+          <option name="PATTERN" value="TextAnalyticsApi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="NaturalLangugageApi.Analyze_EntitySentiment" />
+      <option name="MAIN_CLASS_NAME" value="TextAnalyticsApi.AnalyzeLanguage_MS$DetectLanguage" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -448,14 +444,14 @@
       <module name="Alfresco-MD" />
       <envs />
     </configuration>
-    <configuration name="Analyze_Sentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="AnalyzeSentiment_MS$GetSentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="NaturalLangugageApi.*" />
+          <option name="PATTERN" value="TextAnalyticsApi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="NaturalLangugageApi.Analyze_Sentiment" />
+      <option name="MAIN_CLASS_NAME" value="TextAnalyticsApi.AnalyzeSentiment_MS$GetSentiment" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -467,14 +463,14 @@
       <module name="Alfresco-MD" />
       <envs />
     </configuration>
-    <configuration name="Analyze_Syntax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DetectLanguage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="NaturalLangugageApi.*" />
+          <option name="PATTERN" value="TextAnalyticsApi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="NaturalLangugageApi.Analyze_Syntax" />
+      <option name="MAIN_CLASS_NAME" value="TextAnalyticsApi.DetectLanguage" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -486,14 +482,14 @@
       <module name="Alfresco-MD" />
       <envs />
     </configuration>
-    <configuration name="Classifying_Content" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="RestTest$GetKeyPhrases" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="NaturalLangugageApi.*" />
+          <option name="PATTERN" value="TextAnalyticsApi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="NaturalLangugageApi.Classifying_Content" />
+      <option name="MAIN_CLASS_NAME" value="TextAnalyticsApi.RestTest$GetKeyPhrases" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -586,19 +582,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Analyze_Entities" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Analyze_EntitySentiment" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Classifying_Content" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Analyze_Syntax" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Analyze_Sentiment" />
+      <item index="0" class="java.lang.String" itemvalue="Application.DetectLanguage" />
+      <item index="1" class="java.lang.String" itemvalue="Application.AnalyzeEntity_MS$GetKeyPhrases" />
+      <item index="2" class="java.lang.String" itemvalue="Application.AnalyzeLanguage_MS$DetectLanguage" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AnalyzeSentiment_MS$GetSentiment" />
+      <item index="4" class="java.lang.String" itemvalue="Application.RestTest$GetKeyPhrases" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Analyze_Sentiment" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Analyze_EntitySentiment" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Analyze_Entities" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Analyze_Syntax" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Classifying_Content" />
+        <item index="0" class="java.lang.String" itemvalue="Application.RestTest$GetKeyPhrases" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AnalyzeEntity_MS$GetKeyPhrases" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AnalyzeSentiment_MS$GetSentiment" />
+        <item index="3" class="java.lang.String" itemvalue="Application.AnalyzeLanguage_MS$DetectLanguage" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DetectLanguage" />
       </list>
     </recent_temporary>
   </component>
@@ -666,12 +662,15 @@
       <workItem from="1512388504490" duration="1814000" />
       <workItem from="1512462064220" duration="16659000" />
       <workItem from="1512550176158" duration="18000" />
-      <workItem from="1512561925805" duration="1584000" />
+      <workItem from="1512561925805" duration="5136000" />
+      <workItem from="1512635844633" duration="10374000" />
+      <workItem from="1512680534193" duration="1331000" />
+      <workItem from="1512814920295" duration="1260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203678000" />
+    <option name="totallyTimeSpent" value="220195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -683,23 +682,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27843988" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20476706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3033586" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19476268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24713585" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15724947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22012103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -711,6 +709,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2782324" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -723,7 +722,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="37" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -732,48 +731,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/api/grpc/proto-google-cloud-language-v1beta2/0.1.20/proto-google-cloud-language-v1beta2-0.1.20.jar!/com/google/cloud/language/v1beta2/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="682" column="0" lean-forward="false" selection-start-line="682" selection-start-column="0" selection-end-line="682" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/api/gax-grpc/0.25.1/gax-grpc-0.25.1.jar!/com/google/api/gax/grpc/GrpcApiExceptionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/api/gax/1.8.1/gax-1.8.1.jar!/com/google/api/gax/core/BackgroundResourceAggregation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0.jar!/com/google/common/collect/ImmutableList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0.jar!/com/google/common/base/Preconditions.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10458">
-          <caret line="590" column="0" lean-forward="false" selection-start-line="590" selection-start-column="0" selection-end-line="590" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/20.0/guava-20.0.jar!/com/google/common/collect/Iterators.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8496">
@@ -791,20 +748,6 @@
     <entry file="file://$PROJECT_DIR$/../ypa-dev-training-sept17/YPA-platform-jar/src/main/java/com/incentro/stage/model/Document.java" />
     <entry file="file://$PROJECT_DIR$/../ypa-dev-training-sept17/YPA-platform-jar/src/main/java/com/incentro/stage/model/Docx.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/view/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Handmatig_ReadText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entitys_test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/cloud/google-cloud-language/0.25.0-beta/google-cloud-language-0.25.0-beta.jar!/com/google/cloud/language/v1beta2/stub/GrpcLanguageServiceStub.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -824,7 +767,7 @@
         <state relative-caret-position="720">
           <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,13 +832,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/ParserExtraction.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Type_Read_Switch/Enum.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_TypeDetection.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/TestXWPFWordExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="32" column="2" lean-forward="true" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -906,13 +842,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_TEXT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
           <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
@@ -929,16 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_ODT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,39 +889,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Classifying_Content.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="0">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Syntax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="0">
           <caret line="18" column="56" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,22 +911,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Entities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitySentiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="49" column="5" lean-forward="false" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeLanguage_MS" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entitys_test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/TestXWPFWordExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeSentiment_MS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_XML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        <state relative-caret-position="944">
+          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apacke_Tika_Docx.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeEntity_MS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="43" column="89" lean-forward="false" selection-start-line="43" selection-start-column="89" selection-end-line="43" selection-end-column="89" />
+        <state relative-caret-position="16">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1034,19 +992,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_Sentiment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="4" column="50" lean-forward="true" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        <state relative-caret-position="240">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_PDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content_reader/Apache_Tika_ODT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/NaturalLangugageApi/Analyze_EntitySentiment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/AnalyzeLanguage_MS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="656">
+          <caret line="46" column="55" lean-forward="true" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Handmatig_ReadText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TextAnalyticsApi/RestTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

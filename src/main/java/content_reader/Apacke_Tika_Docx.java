@@ -37,7 +37,7 @@ public class Apacke_Tika_Docx {
         System.out.printf("Language of the given content is: %s",language); System.out.println("\n");
 
 
-        return ("Contents of the PDF :" + output);
+        return ( output);
     }
     public static void main(String[] args) throws TikaException, SAXException, IOException {
         Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();

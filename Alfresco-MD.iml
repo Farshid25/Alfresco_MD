@@ -13,9 +13,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
     <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tika:tika-core:1.16" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tika:tika-core:1.16" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-language:0.25.0-beta" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-tcnative-boringssl-static:2.0.3.Final" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core:1.7.0" level="project" />
@@ -130,7 +127,6 @@
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.5" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.tdunning:json:1.8" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.24" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jul-to-slf4j:1.7.24" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.24" level="project" />
@@ -161,5 +157,6 @@
     <orderEntry type="library" name="Maven: javax.measure:jsr-275:0.9.3" level="project" />
     <orderEntry type="library" name="Maven: edu.usc.ir:sentiment-analysis-parser:0.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.1" level="project" />
   </component>
 </module>

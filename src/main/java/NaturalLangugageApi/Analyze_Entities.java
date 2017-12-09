@@ -52,6 +52,6 @@ public class Analyze_Entities {
 //        analyze_entitiesText.analyzeEntities(pdfReader.readFile("src\\main\\Aanvullende_Files\\poem.pdf"));
 
         Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
-        analyze_entitiesText.analyzeEntities(docxReader.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
+        analyze_entitiesText.analyzeEntities(docxReader.readFile("src\\main\\Aanvullende_Files\\MS1.docx\\"));
     }
 }
