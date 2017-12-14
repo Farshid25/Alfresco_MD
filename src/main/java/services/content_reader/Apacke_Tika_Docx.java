@@ -35,7 +35,6 @@ public class Apacke_Tika_Docx {
         String language = identifier.getLanguage();
         System.out.printf("Language of the given content is: %s",language); System.out.println("\n");
 
-
         return ( output);
     }
     public static void main(String[] args) throws TikaException, SAXException, IOException {
