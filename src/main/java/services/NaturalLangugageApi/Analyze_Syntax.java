@@ -30,11 +30,11 @@ public class Analyze_Syntax {
         }
     }
 
-    public static void main(String[] args) throws Exception{
-        Analyze_Syntax syntax = new Analyze_Syntax();
-        Apacke_Tika_Docx docx = new Apacke_Tika_Docx();
-        Apache_Tika_PDF pdf = new Apache_Tika_PDF();
-        syntax.analyzeSyntax(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
-    }
+//    public static void main(String[] args) throws Exception{
+//        Analyze_Syntax syntax = new Analyze_Syntax();
+//        Apacke_Tika_Docx docx = new Apacke_Tika_Docx();
+//        Apache_Tika_PDF pdf = new Apache_Tika_PDF();
+//        syntax.analyzeSyntax(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
+//    }
 
 }

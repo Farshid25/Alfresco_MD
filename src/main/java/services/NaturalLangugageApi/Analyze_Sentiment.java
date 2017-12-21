@@ -27,7 +27,7 @@ public class Analyze_Sentiment {
         Analyze_Sentiment sentiment = new Analyze_Sentiment();
         Apacke_Tika_Docx docx = new Apacke_Tika_Docx();
         Apache_Tika_PDF pdf = new Apache_Tika_PDF();
-        sentiment.analyzeSentiment(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
+       //sentiment.analyzeSentiment(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx\\"));
     }
 }
 

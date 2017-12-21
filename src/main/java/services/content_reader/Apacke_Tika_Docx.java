@@ -17,11 +17,11 @@ import java.io.IOException;
 
 public class Apacke_Tika_Docx {
 
-    public String readFile(String path) throws IOException, TikaException, SAXException {
+    public String readFile(File path) throws IOException, TikaException, SAXException {
 
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
-        FileInputStream inputstream = new FileInputStream(new File(path));
+        FileInputStream inputstream = new FileInputStream(new File(String.valueOf(path)));
         ParseContext pcontext = new ParseContext();
 
         //parsing the document using PDF parser
@@ -35,10 +35,11 @@ public class Apacke_Tika_Docx {
         String language = identifier.getLanguage();
         System.out.printf("Language of the given content is: %s",language); System.out.println("\n");
 
-        return ( output);
+        return (  output);
     }
     public static void main(String[] args) throws TikaException, SAXException, IOException {
         Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
-        System.out.println(apacke_tika_docx.readFile("src\\main\\Aanvullende_Files\\test1.docx")); /* leest PPTX.XLSX.DOCX.*/
+       // System.out.println(apacke_tika_docx.readFile("src\\main\\Aanvullende_Files\\test1.docx")); /* leest PPTX.XLSX.DOCX.*/
+
     }
 }

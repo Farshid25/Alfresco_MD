@@ -79,20 +79,20 @@ public class AnalyzeSentiment_MS {
             return gson.toJson(json);
         }
 
-        public static void main(String[] args) {
-            Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
-            try {
-                Documents documents = new Documents();
-                documents.add ("1", "en", docxReader.readFile("src\\main\\Aanvullende_Files\\AnalyzeEntities1.docx\\")); //"I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
-//                documents.add ("2", "es", "Si usted quiere comunicarse con Carlos, usted debe de llamarlo a su telefono movil. Carlos es muy responsable, pero necesita recibir una notificacion si hay algun problema.");
-//                documents.add ("3", "en", "The Grand Hotel is a new hotel in the center of Seattle. It earned 5 stars in my review, and has the classiest decor I've ever seen.");
-
-                String response = GetSentiment  (documents);
-                System.out.println(prettify(response));
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
+//        public static void main(String[] args) {
+//            Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
+//            try {
+//                Documents documents = new Documents();
+//                documents.add ("1", "en", docxReader.readFile("src\\main\\Aanvullende_Files\\Klacht.docx\\")); //"I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
+////                documents.add ("2", "es", "Si usted quiere comunicarse con Carlos, usted debe de llamarlo a su telefono movil. Carlos es muy responsable, pero necesita recibir una notificacion si hay algun problema.");
+////                documents.add ("3", "en", "The Grand Hotel is a new hotel in the center of Seattle. It earned 5 stars in my review, and has the classiest decor I've ever seen.");
+//
+//                String response = GetSentiment  (documents);
+//                System.out.println(prettify(response));
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//        }
     }
 }
 

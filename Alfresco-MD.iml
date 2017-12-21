@@ -12,6 +12,13 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.Tika:Tika-core:1.16" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-language:0.25.0-beta" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-tcnative-boringssl-static:2.0.3.Final" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core:1.7.0" level="project" />
@@ -157,6 +164,7 @@
     <orderEntry type="library" name="Maven: edu.usc.ir:sentiment-analysis-parser:0.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.netflix.rxjava:rxjava-core:0.19.0" level="project" />
     <orderEntry type="library" name="Maven: com.sparkjava:spark-core:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.0.2.v20130417" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016" level="project" />

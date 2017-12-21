@@ -4,6 +4,7 @@ public class Category {
     private  String category;
     private Float confidence;
 
+
     public Category(){
 
     }

@@ -39,10 +39,10 @@ public class Analyze_EntitySentiment {
         }
     }
 
-    public static void main(String[] args) throws Exception{
-        Analyze_EntitySentiment analyze_entitySentiment = new Analyze_EntitySentiment();
-        Apache_Tika_PDF pdfReader = new Apache_Tika_PDF();
-        Apacke_Tika_Docx docx = new Apacke_Tika_Docx();
-        analyze_entitySentiment.analyzeEntitySentiment(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx"));
-    }
+//    public static void main(String[] args) throws Exception{
+//        Analyze_EntitySentiment analyze_entitySentiment = new Analyze_EntitySentiment();
+//        Apache_Tika_PDF pdfReader = new Apache_Tika_PDF();
+//        Apacke_Tika_Docx docx = new Apacke_Tika_Docx();
+//        analyze_entitySentiment.analyzeEntitySentiment(docx.readFile("src\\main\\Aanvullende_Files\\test2.docx"));
+//    }
 }

@@ -3,14 +3,20 @@ package services.NaturalLangugageApi;
 import com.google.cloud.language.v1beta2.*;
 
 import model.Category;
+import services.content_reader.Apache_Tika_ODT;
 import services.content_reader.Apache_Tika_PDF;
+import services.content_reader.Apache_Tika_TEXT;
 import services.content_reader.Apacke_Tika_Docx;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 public class Classifying_Content {
+    ArrayList<Category> catList = new ArrayList<>();
 
-    public String classifyFile(String path  , Category cat ) throws Exception {
-
+     public ArrayList<Category> classifyFile(String path) throws Exception {
+        //public Category classifyFile(String path, Category cat ) throws Exception {
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
 
             Document doc = Document.newBuilder()
@@ -26,23 +32,53 @@ public class Classifying_Content {
 
             for (ClassificationCategory category : response.getCategoriesList()) {
 
-                cat.setCategory(category.getName());
-                cat.setConfidence(category.getConfidence());
-
+//                cat.setCategory(category.getName());
+//                cat.setConfidence(category.getConfidence());
+                catList.add(new Category(category.getName(), category.getConfidence()));
             }
         }
-        return "";
+        return catList;
     }
 
-    public static void main(String[] args) throws Exception{
-        Category ca1 = new Category();
-        Classifying_Content cf = new Classifying_Content();
-        Apacke_Tika_Docx ap = new Apacke_Tika_Docx();
-        cf.classifyFile(ap.readFile("src\\main\\Aanvullende_Files\\MS1.docx"),ca1);
-        System.out.println(ca1.getCategory());
-        System.out.println(ca1.getConfidence());
+    public static void main(String[] args) throws Exception {
+        Classifying_Content cc = new Classifying_Content();
+        Apacke_Tika_Docx apacheDoc = new Apacke_Tika_Docx();
+        Apache_Tika_PDF pdfReader  = new Apache_Tika_PDF();
+        Apache_Tika_ODT odt = new Apache_Tika_ODT();
+        //Category category = new Category();
+
+//        try {
+//         ArrayList<Category> categories = cc.classifyFile(apacheDoc.readFile("src\\main\\Aanvullende_Files\\EthicsFinal.docx\\"));
+//           //  cc.classifyFile(apacheDoc.readFile("src\\main\\Aanvullende_Files\\EthicsFinal.docx\\"),category);
+//
+//            //ArrayList<Category> pdf = cc.classifyFile(pdfReader.readFile("src\\main\\Aanvullende_Files\\Sollicitatie.docx\\"));
+//            for (Category category : categories) {
+//
+//                if (category != null) {
+//                    //System.out.println("hiiiiiiiiiii");
+//                    System.out.println("cat " + category);
+//                    System.out.println("get cat " + category.getCategory());
+//                    System.out.println("get con " + category.getConfidence());
+//                    //txtField1.appendText(category.getCategory());
+//                } else {
+//                    System.out.println("leeeeeg");
+//                }
+//
+//            } } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
- }
+}
+//        Category ca1 = new Category();
+//        Classifying_Content cf = new Classifying_Content();
+//        Apacke_Tika_Docx ap = new Apacke_Tika_Docx();
+//
+//        for (Category cat : cf.classifyFile(ap.readFile("src\\main\\Aanvullende_Files\\MS1.docx"),ca1)){
+//            System.out.printf("Category: %s",cat.getCategory() + "\n");
+//            System.out.printf("Confidence: %s", cat.getConfidence() + "\n");
+//            //cat.getCategory();
+//        }
+//    }
 
 
 

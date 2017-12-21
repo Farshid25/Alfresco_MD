@@ -1,6 +1,6 @@
 package fx;
 
-import de.l3s.boilerpipe.document.TextDocument;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,131 +8,170 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import jdk.nashorn.internal.ir.WhileNode;
 import model.Category;
-import org.apache.pdfbox.debugger.ui.DocumentEntry;
+import model.Entity;
 import org.apache.tika.detect.TextDetector;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
+import services.NaturalLangugageApi.Analyze_Entities;
 import services.NaturalLangugageApi.Classifying_Content;
 import services.Type_Read_Switch.TypeDetection;
 import services.content_reader.Apacke_Tika_Docx;
 
-import javax.print.attribute.standard.DocumentName;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+
+import java.util.*;
+import java.lang.*;
+
+//import services.NaturalLangugageApi.Analyze_Entities;
 
 public class Controller implements Initializable {
     TypeDetection typeDetection = new TypeDetection();
     Apacke_Tika_Docx apacheDoc = new Apacke_Tika_Docx();
     Classifying_Content cc = new Classifying_Content();
+    Analyze_Entities ae = new Analyze_Entities();
+    model.Entity entityobject = new model.Entity();
+
     Category cat = new Category();
 
     @FXML
     private Button btn1;
-
     @FXML
-    public TextArea showText;
-
+    public TextArea entName1;
     @FXML
-    private Label lbl1;
-
+    public TextArea entSaile2;
     @FXML
-    private TextField txtField1;  @FXML private TextField txtField2;
-
+    public TextArea entType3;
     @FXML
-    public FileChooser fileChooser = new FileChooser();
-    //    @FXML
-//    private DocumentName documentName = new DocumentName();    //("dd","src\\main\\Aanvullende_Files\\test1.docx");
-//
+    private TextField txtField1;
+    @FXML
+    private TextField txtField2;
+    @FXML
+    private TextField subject;
+    @FXML
+    private FileChooser fileChooser = new FileChooser();
 //    @FXML
-//    private TextDocument textDocument = new TextDocument();
-//
-    @FXML
-    TextDetector textDetector = new TextDetector();
-
+//    TextDetector textDetector = new TextDetector();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btn1.setOnAction(event -> {
+        btn1.setOnAction((ActionEvent event) -> {
+
+
+
             File file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
+            typeDetection.getFile(file);
 
+            //file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
+           /// if (file.get)
+            ArrayList<Entity> enList = null;
             try {
-                cc.classifyFile(apacheDoc.readFile(file.getAbsolutePath()), cat);
-                if (cat.getCategory() != null) {
-                    txtField1.appendText(cat.getCategory());
-                    //txtField2.appendText(cat.getConfidence().toString())
+                enList = ae.analyzeEntities(apacheDoc.readFile(typeDetection.getFile(file)));     //(file.getAbsolutePath()));
+                Map<String, Float> defeaultMap = new HashMap<>();
 
-                    String o = cat.getConfidence().toString();
-                    txtField2.appendText(o);
-                    //System.out.println(String.valueOf(cat.getConfidence()));
+                for (Entity hash : enList) {
+                    defeaultMap.put(hash.getName(), hash.getSalience());
                 }
-                else{
-                    System.out.println("error");
+                for (Map.Entry<String, Float> sal : defeaultMap.entrySet()) {
+                    System.out.println(sal.getKey() + " " +sal.getValue());
                 }
+            } catch (TikaException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
-            }
-//            try {
-//                txtField1.appendText(typeDetection.mySwitch(file.getAbsolutePath()));
-//                showText.appendText("\nYour File Name is: "+file.getName());
-//                //showText.appendText(typeDetection.mySwitch(file.getAbsolutePath()));
+            }});}}
+
+// Entities & Saliences fix
+
+//                try {
+//                    ArrayList<Category> categories = cc.classifyFile(apacheDoc.readFile(typeDetection   //file.getAbsolutePath()));
 //
+//                    for (Category category : categories) {
+//                        if (category != null) {
+//                            System.out.println("get cat " + category.getCategory());
+//                            System.out.println("get con "+ category.getConfidence());
+//                            txtField1.appendText(category.getCategory());
+//                        } else {
+//                            System.out.println("leeg");
+//                        }
+//                    }
+//                    for (Category category : categories){
+//                        Float o = category.getConfidence() * 100;
+//                        String b = o.toString();
+//                        txtField2.appendText("% "+ String.valueOf(Math.round(Float.parseFloat(b))));
+//                    }
+//                } catch (TikaException e) {
+//                    e.printStackTrace();
+//                } catch (SAXException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//                Map<String, Float> mmap = new HashMap<>();
+//                for (Entity i : enList) mmap.put(i.getName(), i.getSalience());
+//
+//                for (Map.Entry<String, Float> sal : mmap.entrySet()) {
+//                    entName1.appendText(sal.getKey() + " , ");
+//                    Float omzettenFloat = sal.getValue() * 100;
+//                    String afrondenFloat = omzettenFloat.toString();
+//                    entSaile2.appendText("%" + Math.round(Float.parseFloat(afrondenFloat)) + " , ");
+//                }
+//
+////  Subject fix
+//                Map<String, Float> map = new HashMap<>();
+//
+//                for (Entity hash : enList) {
+//                    map.put(hash.getName(), hash.getSalience());
+//                }
+//
+//                ArrayList<Float> salien = new ArrayList<>();
+//
+//                for (Map.Entry<String, Float> sal : map.entrySet()) {
+//                    salien.add(sal.getValue());
+//                }
+//
+//                float max = 0;
+//                try {
+//                    max += Collections.max(salien);
+//
+//                    Map.Entry<String, Float> print = null;
+//                    for (Map.Entry<String, Float> e : map.entrySet()) {
+//                        if (e.getValue().equals(max)) {
+//                            print = e;
+//                        }
+//                    }
+//                    if (print != null) {
+//                        subject.appendText(print.getKey());
+//                    } else {
+//                        System.out.println("error hashmap");
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//            } catch (TikaException e) {
+//                e.printStackTrace();
+//            } catch (SAXException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
 //            } catch (Exception e) {
 //                e.printStackTrace();
 //            }
+//        });
+//    }
+//}
 
-        });
-    }
 
-//
-//    @FXML
-//    private Button eenAfbeelding;
-//
-//    @FXML
-//    private Button meerdereAfbeeldingen;
-//
-//    @FXML
-//    private final FileChooser fileChooser = new FileChooser();
-//
-//    @FXML
-//    private final DirectoryChooser directoryChooser = new DirectoryChooser();
-//
-//    @FXML
-//    private ImageMetadata imageMetadata = new ImageMetadata();
-//
-//    private SchedulerFactory schedFact = new StdSchedulerFactory();
-//
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        eenAfbeelding.setOnAction(
-//                e -> {
-//                    File file = fileChooser.showOpenDialog(eenAfbeelding.getScene().getWindow());
-//                    if (file != null) {
-//                        showText.clear();
-//                        try {
-//                            showText.appendText(imageMetadata.showImageMetadata(file));
-//                        } catch (Exception e1) {
-//                            e1.printStackTrace();
-//                        }
-//                    }
-//                });
-//
-//        meerdereAfbeeldingen.setOnAction(
-//                e -> {
-//                    List list =
-//                            fileChooser.showOpenMultipleDialog(meerdereAfbeeldingen.getScene().getWindow());
-//                    if (list != null) {
-//                        showText.clear();
-//                        for (Object file : list) {
-//                            if (file instanceof File) {
-//                                File newFile = (File) file;
-//                                try {
-//                                    showText.appendText(imageMetadata.showImageMetadata(newFile));
-//                                } catch (Exception e1) {
-//                                    e1.printStackTrace();
-//                                }
-//                            }
-//                        }
-//                    }
-//                });
 
-}
+

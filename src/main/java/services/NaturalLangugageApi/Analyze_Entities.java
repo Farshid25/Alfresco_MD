@@ -9,11 +9,18 @@ import com.google.cloud.language.v1.EncodingType;
 import com.google.cloud.language.v1.Entity;
 import com.google.cloud.language.v1.EntityMention;
 import com.google.cloud.language.v1.LanguageServiceClient;
-
+import com.sun.org.apache.bcel.internal.generic.RET;
+import org.apache.regexp.RE;
 import services.content_reader.*;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class Analyze_Entities {
-    public void analyzeEntities(String text) throws Exception {
+    ArrayList<model.Entity> entities = new ArrayList<>();
+
+    public ArrayList<model.Entity> analyzeEntities(String text ) throws Exception {
+//        model.Entity entityobject = new model.Entity();
 
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
             Document doc = Document.newBuilder()
@@ -26,22 +33,21 @@ public class Analyze_Entities {
                     .build();
 
             AnalyzeEntitiesResponse response = language.analyzeEntities(request);
-        for (Entity entity : response.getEntitiesList()) {
 
-            System.out.printf("Entity: %s\n", entity.getName());
-            System.out.printf("Type: %s\n", entity.getType()); //person
-            System.out.printf("Salience: %.3f\n", entity.getSalience());
-//            System.out.println("Metadata: ");
-//            for (Map.Entry<String, String> entry : entity.getMetadataMap().entrySet()) {
-//                System.out.printf("%s : %s", entry.getKey(), entry.getValue());
-//            }
+            for (Entity entity : response.getEntitiesList()) {
+                //entities.add(new model.Entity(entity.getName(), entity.getSalience()));
+                //entityobject.setName(entity.getName());
+
             for (EntityMention mention : entity.getMentionsList()) {
 
 //                System.out.printf("Content: %s\n", mention.getText().getContent());           // alleen zinnin i.c.m. Sentences, anders geen input.
-                System.out.printf("Type: %s\n\n", mention.getType()); //common/proper
+                entities.add(new model.Entity(entity.getName(),entity.getSalience(), mention.getType()));
+
+                //System.out.printf("Type: %s\n\n", mention.getType()); //common/proper
+            }
             }
         }
-    }
+        return entities;
     }
 
     public static void main(String[] args) throws Exception {
@@ -50,6 +56,10 @@ public class Analyze_Entities {
 //        analyze_entitiesText.analyzeEntities(pdfReader.readFile("src\\main\\Aanvullende_Files\\poem.pdf"));
 
         Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
-        analyze_entitiesText.analyzeEntities(docxReader.readFile("src\\main\\Aanvullende_Files\\MS1.docx\\"));
-    }
-}
+        model.Entity object = new model.Entity();
+
+        //ArrayList<model.Entity> entit;// = new ArrayList<>();
+     //   List<model.Entity> entit = analyze_entitiesText.analyzeEntities(docxReader.readFile("src\\main\\Aanvullende_Files\\test1.docx\\"));
+
+        }
+        }

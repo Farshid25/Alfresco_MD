@@ -1,15 +1,40 @@
 package services.Type_Read_Switch;
 
 import model.restModel.Result;
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
 import services.NaturalLangugageApi.Classifying_Content;
 import services.content_reader.*;
 import org.apache.tika.Tika;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.File;
+import java.io.IOException;
 
 public class TypeDetection {
+public String getFile(File file) throws IOException, TikaException, SAXException {
+    Classifying_Content classifying_content = new Classifying_Content();
 
+    String result = "";
+
+    Tika tika = new Tika();
+    String type = tika.detect(file);
+    switch (type) {
+        case "application/x-tika-ooxml": // PPTX.XLSX.DOCX.
+            //result.setDocType(type);
+
+            System.out.println("Your File Type is: " + type);
+            Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
+
+            //result += classifying_content.classifyFile(apacke_tika_docx.readFile(pad));
+            result += apacke_tika_docx.readFile(file);
+            System.out.println("test" +result);
+
+            break;
+    } return result;
+
+}
     public String mySwitch(String pad)throws Exception {
 
         String result = "";
@@ -62,6 +87,8 @@ public class TypeDetection {
 
     public static void main(String[] args) throws Exception{
         TypeDetection typeDetection = new TypeDetection();
+       // typeDetection.getFile()
+
         System.out.println(typeDetection.mySwitch("src\\main\\Aanvullende_Files\\MS1.docx"));
     }
 }
