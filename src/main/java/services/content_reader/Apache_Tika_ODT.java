@@ -14,12 +14,12 @@ import org.xml.sax.SAXException;
 
     public class Apache_Tika_ODT {
 
-        public String readFile(String pad) throws IOException, SAXException, TikaException {
+        public String readFile(File pad) throws IOException, SAXException, TikaException {
 
             //detecting the file type
             BodyContentHandler handler = new BodyContentHandler();
             Metadata metadata = new Metadata();
-            FileInputStream inputstream = new FileInputStream(new File(pad));
+            FileInputStream inputstream = new FileInputStream(new File(String.valueOf(pad)));
             ParseContext pcontext = new ParseContext();
 
             //Open Document Parser
@@ -29,8 +29,8 @@ import org.xml.sax.SAXException;
             return output;
         }
 
-        public static void main(String[] args) throws TikaException, SAXException, IOException {
-            Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
-            System.out.println(apache_tika_odt.readFile("src\\main\\resources\\ODT.odt"));
-        }
+//        public static void main(String[] args) throws TikaException, SAXException, IOException {
+//            Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
+//            System.out.println(apache_tika_odt.readFile("src\\main\\resources\\ODT.odt"));
+//        }
     }

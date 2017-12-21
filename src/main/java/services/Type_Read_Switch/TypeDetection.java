@@ -11,31 +11,80 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TypeDetection {
-public String getFile(File file) throws IOException, TikaException, SAXException {
-    Classifying_Content classifying_content = new Classifying_Content();
+    public String getType(File file) throws IOException, TikaException, SAXException {
 
-    String result = "";
+        Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
 
-    Tika tika = new Tika();
-    String type = tika.detect(file);
-    switch (type) {
-        case "application/x-tika-ooxml": // PPTX.XLSX.DOCX.
-            //result.setDocType(type);
+        Tika tika = new Tika();
+        String type = tika.detect(file);
+        System.out.println(type);
+        String result = " ";
+//        System.out.println(type);
+//        if (type.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+//            System.out.println("jouw type is goed" + type);
+//        else {
+//            System.out.println("fuck man");
+//        }
+        result += apacke_tika_docx.readFile(file);
+        return result;
+    }
 
-            System.out.println("Your File Type is: " + type);
-            Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
+    public String getFile(File file) throws IOException, TikaException, SAXException {
+        //Classifying_Content classifying_content = new Classifying_Content();
 
-            //result += classifying_content.classifyFile(apacke_tika_docx.readFile(pad));
-            result += apacke_tika_docx.readFile(file);
-            System.out.println("test" +result);
+        Tika tika = new Tika();
+        String type = tika.detect(file);
+        String result = "";
 
-            break;
-    } return result;
+        switch (type) {
+            case "application/vnd.openxmlformats-officedocument.wordprocessingml.document": //  .DOCX
 
-}
-    public String mySwitch(String pad)throws Exception {
+                System.out.println("Your File Type is: " + type);
+                Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
+                result += apacke_tika_docx.readFile(file);
+                break;
+
+            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": //  .XLSX
+
+                System.out.println("Your File Type is: " + type);
+                Apacke_Tika_Docx xlsx = new Apacke_Tika_Docx();
+                result += xlsx.readFile(file);
+                break;
+
+            case "application/vnd.openxmlformats-officedocument.presentationml.presentation": // .PPTX
+
+                System.out.println("Your File Type is: " + type);
+                Apacke_Tika_Docx pptx = new Apacke_Tika_Docx();
+                result += pptx.readFile(file);
+                break;
+
+            case "application/pdf":                                         //.pdf
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_PDF apache_tika_pdf = new Apache_Tika_PDF();
+                result += apache_tika_pdf.readFile(file);
+                break;
+
+            case "application/vnd.oasis.opendocument.text":                 //.odt
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
+                result += apache_tika_odt.readFile(file);
+                break;
+
+            case "text/plain":
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_TEXT apache_tika_text = new Apache_Tika_TEXT();
+                result += apache_tika_text.readFile(file);
+                break;
+        }
+
+        return result;
+    }
+
+    public String mySwitch(String pad) throws Exception {
 
         String result = "";
 
@@ -50,10 +99,11 @@ public String getFile(File file) throws IOException, TikaException, SAXException
             case "application/x-tika-ooxml": // PPTX.XLSX.DOCX.
                 //result.setDocType(type);
 
-                System.out.println("Your File Type is: " +  type);
+                System.out.println("Your File Type is: " + type);
                 Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
 
-                 //result += classifying_content.classifyFile(apacke_tika_docx.readFile(pad)) ;
+                //result += classifying_content.classifyFile(apacke_tika_docx.readFile(pad)) ;
+
 
                 break;
 //            case "application/pdf":
@@ -85,9 +135,9 @@ public String getFile(File file) throws IOException, TikaException, SAXException
         return result;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         TypeDetection typeDetection = new TypeDetection();
-       // typeDetection.getFile()
+        //typeDetection.getFile()
 
         System.out.println(typeDetection.mySwitch("src\\main\\Aanvullende_Files\\MS1.docx"));
     }

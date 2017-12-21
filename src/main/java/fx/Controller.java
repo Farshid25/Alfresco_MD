@@ -59,64 +59,72 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btn1.setOnAction((ActionEvent event) -> {
-
-
-
             File file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
-            typeDetection.getFile(file);
+               //typeDetection.getFile(file);
 
             //file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
            /// if (file.get)
+
             ArrayList<Entity> enList = null;
             try {
-                enList = ae.analyzeEntities(apacheDoc.readFile(typeDetection.getFile(file)));     //(file.getAbsolutePath()));
-                Map<String, Float> defeaultMap = new HashMap<>();
+                //enList = ae.analyzeEntities(typeDetection.getFile(file));
+                enList = ae.analyzeEntities(typeDetection.getFile(file));
+                for (Entity f : enList){
+                    System.out.println("Controller test " +f.getName());
+                    entName1.appendText(f.getName()+ " ");
 
-                for (Entity hash : enList) {
-                    defeaultMap.put(hash.getName(), hash.getSalience());
                 }
-                for (Map.Entry<String, Float> sal : defeaultMap.entrySet()) {
-                    System.out.println(sal.getKey() + " " +sal.getValue());
-                }
-            } catch (TikaException e) {
-                e.printStackTrace();
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }});}}
+
+//            try {
+//                 enList = ae.analyzeEntities(typeDetection.getFile(file));     //(file.getAbsolutePath()));
+//                Map<String, Float> defeaultMap = new HashMap<>();
+//
+//                for (Entity hash : enList) {
+//                    defeaultMap.put(hash.getName(), hash.getSalience());
+//                }
+//                for (Map.Entry<String, Float> sal : defeaultMap.entrySet()) {
+//                    System.out.println(sal.getKey() + " " +sal.getValue());
+//                }
+//            } catch (TikaException e) {
+//                e.printStackTrace();
+//            } catch (SAXException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
 
 // Entities & Saliences fix
+        ArrayList<Category> categories = null;
 
-//                try {
-//                    ArrayList<Category> categories = cc.classifyFile(apacheDoc.readFile(typeDetection   //file.getAbsolutePath()));
-//
-//                    for (Category category : categories) {
-//                        if (category != null) {
-//                            System.out.println("get cat " + category.getCategory());
-//                            System.out.println("get con "+ category.getConfidence());
-//                            txtField1.appendText(category.getCategory());
-//                        } else {
-//                            System.out.println("leeg");
-//                        }
-//                    }
-//                    for (Category category : categories){
-//                        Float o = category.getConfidence() * 100;
-//                        String b = o.toString();
-//                        txtField2.appendText("% "+ String.valueOf(Math.round(Float.parseFloat(b))));
-//                    }
-//                } catch (TikaException e) {
-//                    e.printStackTrace();
-//                } catch (SAXException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//
+                    categories = cc.classifyFile(typeDetection.getFile(file));   //file.getAbsolutePath()));
+
+                    for (Category category : categories) {
+                        if (category != null) {
+                            System.out.println("get cat " + category.getCategory());
+                            System.out.println("get con "+ category.getConfidence());
+                            txtField1.appendText(category.getCategory());
+                        } else {
+                            System.out.println("leeg");
+                        }
+                    }
+                    for (Category category : categories){
+                        Float o = category.getConfidence() * 100;
+                        String b = o.toString();
+                        txtField2.appendText("% "+ String.valueOf(Math.round(Float.parseFloat(b))));
+                    }
+
+
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        });}}
 //                Map<String, Float> mmap = new HashMap<>();
 //                for (Entity i : enList) mmap.put(i.getName(), i.getSalience());
 //
