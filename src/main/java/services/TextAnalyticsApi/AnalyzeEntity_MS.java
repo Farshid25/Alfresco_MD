@@ -75,8 +75,9 @@ public class AnalyzeEntity_MS {
             return gson.toJson(json);
         }
 
-//        public static void main(String[] args) {
-//            Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
+        public static void main(String[] args) {
+            Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
+
 //            try {
 //                Documents documents = new Documents();
 //                documents.add ("1", "en", docxReader.readFile("src\\main\\Aanvullende_Files\\Klacht.docx\\")); //"I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
@@ -88,7 +89,7 @@ public class AnalyzeEntity_MS {
 //            } catch (Exception e) {
 //                System.out.println(e);
 //            }
-//        }
+        }
     }
 }
 
