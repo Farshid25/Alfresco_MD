@@ -4,14 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
-import jdk.nashorn.internal.ir.WhileNode;
 import model.Category;
 import model.Entity;
-import org.apache.tika.detect.TextDetector;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
 import services.NaturalLangugageApi.Analyze_Entities;
@@ -29,6 +26,7 @@ import java.lang.*;
 //import services.NaturalLangugageApi.Analyze_Entities;
 
 public class Controller implements Initializable {
+    public Button newButton;
     TypeDetection typeDetection = new TypeDetection();
     Apacke_Tika_Docx apacheDoc = new Apacke_Tika_Docx();
     Classifying_Content cc = new Classifying_Content();
@@ -40,40 +38,28 @@ public class Controller implements Initializable {
     @FXML
     private Button btn1;
     @FXML
-    public TextArea entName1;
+    private Button serkan;
     @FXML
-    public TextArea entSaile2;
+    public TextArea entities;
     @FXML
-    public TextArea entType3;
+    public TextArea salience;
     @FXML
-    private TextField txtField1;
+    public TextArea test;
     @FXML
-    private TextField txtField2;
+    private TextField category;
+    @FXML
+    private TextField confidence;
     @FXML
     private TextField subject;
     @FXML
-    private FileChooser fileChooser = new FileChooser();
-//    @FXML
-//    TextDetector textDetector = new TextDetector();
+    private final FileChooser fileChooser = new FileChooser();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btn1.setOnAction((ActionEvent event) -> {
+        btn1.setOnAction(e -> {
             File file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
-            //typeDetection.getFile(file);
-
-            //file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
-            /// if (file.get)
 
             ArrayList<Entity> enList = null;
-//            try {
-//                //enList = ae.analyzeEntities(typeDetection.getFile(file));
-//                enList = ae.analyzeEntities(typeDetection.getFile(file));
-//                for (Entity f : enList){
-//                    System.out.println("Controller test " +f.getName());
-//                    entName1.appendText(f.getName()+ " ");
-//
-//                }
 
             try {
                 enList = ae.analyzeEntities(typeDetection.getFile(file));     //(file.getAbsolutePath()));
@@ -85,16 +71,9 @@ public class Controller implements Initializable {
                 for (Map.Entry<String, Float> sal : defeaultMap.entrySet()) {
                     System.out.println(sal.getKey() + " " + sal.getValue());
                 }
-            } catch (TikaException e) {
-                e.printStackTrace();
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e1) {
+                e1.printStackTrace();
             }
-
 
 // Entities & Saliences fix
             ArrayList<Category> categories = null;
@@ -102,11 +81,11 @@ public class Controller implements Initializable {
             try {
                 categories = cc.classifyFile(typeDetection.getFile(file));   //file.getAbsolutePath()));
 
-                for (Category category : categories) {
+                for (Category cat : categories) {
                     if (category != null) {
-                        System.out.println("get cat " + category.getCategory());
-                        System.out.println("get con " + category.getConfidence());
-                        txtField1.appendText(category.getCategory());
+                        System.out.println("get cat " + cat.getCategory());
+                        System.out.println("get con " + cat.getConfidence());
+                        category.appendText(cat.getCategory());
                     } else {
                         System.out.println("leeg");
                     }
@@ -114,25 +93,23 @@ public class Controller implements Initializable {
                 for (Category category : categories) {
                     Float o = category.getConfidence() * 100;
                     String b = o.toString();
-                    txtField2.appendText("% " + String.valueOf(Math.round(Float.parseFloat(b))));
+                    confidence.appendText("% " + String.valueOf(Math.round(Float.parseFloat(b))));
                 }
 
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e1) {
+                e1.printStackTrace();
             }
 
             Map<String, Float> mmap = new HashMap<>();
-            for (Entity i : enList) mmap.put(i.getName(), i.getSalience());
+            if (enList != null) {
+                for (Entity i : enList) mmap.put(i.getName(), i.getSalience());
+            }
 
             for (Map.Entry<String, Float> sal : mmap.entrySet()) {
-                entName1.appendText(sal.getKey() + " , ");
+                entities.appendText(sal.getKey() + " , ");
                 Float omzettenFloat = sal.getValue() * 100;
                 String afrondenFloat = omzettenFloat.toString();
-                entSaile2.appendText("%" + Math.round(Float.parseFloat(afrondenFloat)) + " , ");
+                salience.appendText("%" + Math.round(Float.parseFloat(afrondenFloat)) + " , ");
             }
 
 //
@@ -155,9 +132,9 @@ public class Controller implements Initializable {
                 max += Collections.max(salien);
 
                 Map.Entry<String, Float> print = null;
-                for (Map.Entry<String, Float> e : map.entrySet()) {
-                    if (e.getValue().equals(max)) {
-                        print = e;
+                for (Map.Entry<String, Float> en : map.entrySet()) {
+                    if (en.getValue().equals(max)) {
+                        print = en;
                     }
                 }
                 if (print != null) {
@@ -165,16 +142,28 @@ public class Controller implements Initializable {
                 } else {
                     System.out.println("error hashmap");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e1) {
+                e1.printStackTrace();
             }
 
-
         });
+
+        newButton.setOnAction(
+            e -> {
+                List list =
+                        fileChooser.showOpenMultipleDialog(newButton.getScene().getWindow());
+                test.clear();
+
+                for (Object i : list) {
+                    if (i instanceof File) {
+                        test.appendText(((File) i).getAbsolutePath());
+                    }
+                }
+            }
+        );
     }
+
 }
-
-
 
 
 

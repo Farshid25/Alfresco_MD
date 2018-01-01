@@ -15,23 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TypeDetection {
-    public String getType(File file) throws IOException, TikaException, SAXException {
-
-        Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
-
-        Tika tika = new Tika();
-        String type = tika.detect(file);
-        System.out.println(type);
-        String result = " ";
-//        System.out.println(type);
-//        if (type.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
-//            System.out.println("jouw type is goed" + type);
-//        else {
-//            System.out.println("fuck man");
-//        }
-        result += apacke_tika_docx.readFile(file);
-        return result;
-    }
 
     public String getFile(File file) throws IOException, TikaException, SAXException {
         //Classifying_Content classifying_content = new Classifying_Content();

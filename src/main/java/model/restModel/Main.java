@@ -1,11 +1,11 @@
-package model.restModel;
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        new UserController(new UserService());
-
-    }
-
-}
+//package model.restModel;
+//
+//public class Main {
+//
+//    public static void main(String[] args) {
+//
+//        new UserController(new UserService());
+//
+//    }
+//
+//}
