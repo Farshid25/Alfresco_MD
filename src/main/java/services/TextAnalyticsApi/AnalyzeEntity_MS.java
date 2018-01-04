@@ -77,18 +77,20 @@ public class AnalyzeEntity_MS {
 
         public static void main(String[] args) {
             Apacke_Tika_Docx docxReader = new Apacke_Tika_Docx();
+            Apache_Tika_PDF pdf = new Apache_Tika_PDF();
 
-//            try {
-//                Documents documents = new Documents();
-//                documents.add ("1", "en", docxReader.readFile("src\\main\\Aanvullende_Files\\Klacht.docx\\")); //"I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
-////                documents.add ("2", "es", "Si usted quiere comunicarse con Carlos, usted debe de llamarlo a su telefono movil. Carlos es muy responsable, pero necesita recibir una notificacion si hay algun problema.");
-////                documents.add ("3", "en", "The Grand Hotel is a new hotel in the center of Seattle. It earned 5 stars in my review, and has the classiest decor I've ever seen.");
-//
-//                String response = GetKeyPhrases (documents);
-//                System.out.println(prettify(response));
-//            } catch (Exception e) {
-//                System.out.println(e);
-//            }
+            try {
+                Documents documents = new Documents();
+                File file = new File("src\\main\\Aanvullende_Files\\Payment Advice Note from 02.01.2018.pdf\\");
+                documents.add ("1", "en", pdf.readFile(file)); //"I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable.");
+//                documents.add ("2", "es", "Si usted quiere comunicarse con Carlos, usted debe de llamarlo a su telefono movil. Carlos es muy responsable, pero necesita recibir una notificacion si hay algun problema.");
+//                documents.add ("3", "en", "The Grand Hotel is a new hotel in the center of Seattle. It earned 5 stars in my review, and has the classiest decor I've ever seen.");
+
+                String response = GetKeyPhrases (documents);
+                System.out.println(prettify(response));
+            } catch (Exception e) {
+                System.out.println(e);
+           }
         }
     }
 }

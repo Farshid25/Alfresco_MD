@@ -8,7 +8,7 @@ public class UserService {
 
 
     public List<User> getAll(){
-        ArrayList<User> users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         users.add(new User("1","farshid"));
         return users;
     }

@@ -12,8 +12,10 @@ import org.apache.tika.sax.BodyContentHandler;
 import org.apache.tika.language.LanguageIdentifier;
 
 import org.xml.sax.SAXException;
-    public class Apache_Tika_PDF {
+import services.GoogleTranslationApi.TranslateText;
 
+public class Apache_Tika_PDF {
+    TranslateText translateText = new TranslateText();
         //public static void main(final String[] args) throws IOException, TikaException, SAXException {
 
         public String readFile(File path) throws IOException, TikaException, SAXException {
@@ -27,19 +29,26 @@ import org.xml.sax.SAXException;
             PDFParser pdfparser = new PDFParser();
 
             pdfparser.parse(inputstream, handler, metadata, pcontext);
-
-                String output = handler.toString();
+                String handel = handler.toString();
+                String output = "";
 
             LanguageIdentifier identifier = new LanguageIdentifier(output);
             String language = identifier.getLanguage();
-            System.out.println("Language of the given content is : " + language);
-
+            System.out.println("Language of the given content is : " + language); System.out.println("\n");
+            if (language.equals("nl")) {
+                output += translateText.TransIt(handel);
+                System.out.println("omgezet naar EN");
+            }else{
+                output += handel.toString();
+                System.out.println("geen NL ");
+            }
             return (output);
     }
 
-//        public static void main(String[] args) throws TikaException, IOException, SAXException {
-//            Apache_Tika_PDF p = new Apache_Tika_PDF();
-//            System.out.println(p.readFile("src\\main\\resources\\Tetris-PDF.pdf"));
-//           // System.out.println(p.result());
-//        }
+        public static void main(String[] args) throws TikaException, IOException, SAXException {
+            Apache_Tika_PDF p = new Apache_Tika_PDF();
+            File pdf = new File("src\\main\\Aanvullende_Files\\poem.pdf");
+            System.out.println(p.readFile(pdf));
+           // System.out.println(p.result());
+        }
     }

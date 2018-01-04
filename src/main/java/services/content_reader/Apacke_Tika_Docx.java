@@ -37,20 +37,20 @@ public class Apacke_Tika_Docx {
         LanguageIdentifier identifier = new LanguageIdentifier(handel);
         String language = identifier.getLanguage();
         System.out.printf("Language of the given content is: %s",language); System.out.println("\n");
-        if (language.equals("en")) {
+        if (language.equals("nl")) {
             output += translateText.TransIt(handel);
-            System.out.println("ja");
+            System.out.println("omgezet naar EN");
         }else{
             output += handel.toString();
-            System.out.println("nee");
+            System.out.println("geen NL ");
         }
         return  (output);
-    }
+    }}
 
-    public static void main(String[] args) throws TikaException, SAXException, IOException {
-        Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
-        File file = new File("src\\main\\Aanvullende_Files\\NL_tekst.docx");
-       System.out.println(apacke_tika_docx.readFile(file)); /* leest PPTX.XLSX.DOCX.*/
+//    public static void main(String[] args) throws TikaException, SAXException, IOException {
+//        Apacke_Tika_Docx apacke_tika_docx = new Apacke_Tika_Docx();
+//        File file = new File("src\\main\\Aanvullende_Files\\nl_tekst.docx");
+//       System.out.println(apacke_tika_docx.readFile(file)); /* leest PPTX.XLSX.DOCX.*/
+//
+//    }
 
-    }
-}

@@ -3,6 +3,7 @@ package services.Type_Read_Switch;
 import model.restModel.Result;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
+import services.GoogleTranslationApi.TranslateText;
 import services.NaturalLangugageApi.Classifying_Content;
 import services.content_reader.*;
 import org.apache.tika.Tika;
@@ -51,7 +52,7 @@ public class TypeDetection {
                 result += apache_tika_pdf.readFile(file);
                 break;
 
-            case "application/vnd.oasis.opendocument.text":                 //.odt
+            case "application/vnd.oasis.opendocument.text":                 //.odt  open document text (oude Docx)
                 System.out.println("Your File Type is: " + type);
                 Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
                 result += apache_tika_odt.readFile(file);
@@ -120,9 +121,11 @@ public class TypeDetection {
 
     public static void main(String[] args) throws Exception {
         TypeDetection typeDetection = new TypeDetection();
+        TranslateText translateText = new TranslateText();
         //typeDetection.getFile()
-
-        System.out.println(typeDetection.mySwitch("src\\main\\Aanvullende_Files\\MS1.docx"));
+        File f = new File("src\\main\\Aanvullende_Files\\poem.pdf");
+        System.out.println(translateText.TranslateEngels(typeDetection.getFile(f)));
+       //System.out.println(typeDetection.mySwitch("src\\main\\Aanvullende_Files\\MS1.docx"));
     }
 }
 

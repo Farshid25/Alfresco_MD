@@ -14,6 +14,11 @@ public class Entity {
         this.type = type;
     }
 
+    public Entity(String name, Float salience) {
+        this.name = name;
+        this.salience = salience;
+    }
+
     public Entity() {
     }
 
@@ -49,10 +54,10 @@ public class Entity {
 
     @Override
     public String toString() {
-        return "Entity{" +
+        return "ENTITY{" +
                 "name='" + name + '\'' +
-                ", salience=" + salience +
-                ", type='" + type + '\'' +
-                '}';
+                ", salience=" + salience  + '\'' +
+                '}' + "\n";
     }
+
 }
