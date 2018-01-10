@@ -10,12 +10,13 @@ import services.content_reader.Apacke_Tika_Docx;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Classifying_Content {
-    ArrayList<Category> catList = new ArrayList<>();
 
-     public ArrayList<Category> classifyFile(String path) throws Exception {
+     public List<Category> classifyFile(String path) throws Exception {
+         List<Category> catList = new ArrayList<>();
         //public Category classifyFile(String path, Category cat ) throws Exception {
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
 
@@ -37,7 +38,7 @@ public class Classifying_Content {
                 catList.add(new Category(category.getName(), category.getConfidence()));
             }
         }
-        return catList;
+         return catList;
     }
 
     public static void main(String[] args) throws Exception {

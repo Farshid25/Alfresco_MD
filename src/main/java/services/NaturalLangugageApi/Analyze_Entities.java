@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 
 public class Analyze_Entities {
 
-
     public List<model.Entity> analyzeEntities(String text) throws Exception {
 //        model.Entity entityobject = new model.Entity();
         List<model.Entity> entities = new ArrayList<>();
