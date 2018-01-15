@@ -7,6 +7,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import model.Category;
 import model.Entity;
@@ -18,12 +22,14 @@ import services.NaturalLangugageApi.Classifying_Content;
 import services.Type_Read_Switch.TypeDetection;
 import services.content_reader.Apacke_Tika_Docx;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
 import java.util.*;
 import java.lang.*;
+import java.util.List;
 
 //import services.NaturalLangugageApi.Analyze_Entities;
 
@@ -38,33 +44,39 @@ public class Controller implements Initializable {
     Category cat = new Category();
 
     @FXML
-    private AnchorPane anchorPane;
-    @FXML
     private Button btn1;
     @FXML
     private Button newButton;
     @FXML
     public TextArea entities;
     @FXML
-    public TextArea test1;
+    public TextArea file1;
     @FXML
-    public TextArea test2;
+    public TextArea file2;
     @FXML
-    public TextArea test3;
+    public TextArea file3;
     @FXML
-    public TextArea finalTxt1;
+    public TextArea file1Category;
     @FXML
-    public TextArea finalTxt2;
+    private TextArea file1Subject;
     @FXML
-    public TextArea finalTxt3;
+    public TextArea file2Category;
     @FXML
-    private TextField category;
+    private TextArea file2Subject;
+    @FXML
+    public TextArea file3Category;
+    @FXML
+    private TextArea file3Subject;
+    @FXML
+    private TextArea category;
     @FXML
     TextField fileName;
     @FXML
-    TextField superCategorie;
+    TextArea fileNames;
     @FXML
-    private TextField confidence;
+    private TextField nextCategorie;
+    @FXML
+    private TextArea multiSuitable;
     @FXML
     private TextField subject;
     @FXML
@@ -73,14 +85,17 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        anchorPane.setStyle("-fx-background-color: #FFB252;");
+//        text.setText("Incentro");
+//        text.setFont(Font.font(null, FontWeight.BOLD, 60));
+//        text.setFill(Color.ORANGE);
+
         btn1.setOnAction(e -> {
             category.clear();
-            confidence.clear();
+            fileNames.clear();
             subject.clear();
             entities.clear();
             fileName.clear();
-            superCategorie.clear();
+            nextCategorie.clear();
 
             File file = fileChooser.showOpenDialog(btn1.getScene().getWindow());
             fileName.appendText(file.getName());
@@ -101,7 +116,7 @@ public class Controller implements Initializable {
                 e1.printStackTrace();
             }
 
-            // Superieure CATEGORIE eruit halen.
+// Superieure CATEGORIE eruit halen.
             List<Float> test = new ArrayList<>();
             Map<String, Float> cattt = new HashMap<>();
             try {
@@ -109,13 +124,8 @@ public class Controller implements Initializable {
                 for (Category c : testCategorie) {
                     cattt.put(c.getCategory(), c.getConfidence());
                 }
-                for (Map.Entry<String, Float> pp : cattt.entrySet()) {
-
-                    test.add(pp.getValue());
-                    System.out.println("Eerst");
-                    System.out.println(pp.getKey() + " " + pp.getValue());
-                    System.out.println("daarna");
-                    //fileName.appendText(pp.getKey());
+                for (Map.Entry<String, Float> mm : cattt.entrySet()) {
+                    test.add(mm.getValue());
                 }
             } catch (TikaException e1) {
                 e1.printStackTrace();
@@ -139,7 +149,8 @@ public class Controller implements Initializable {
                     }
                 }
                 if (print != null) {
-                    superCategorie.appendText(print.getKey());
+                    System.out.println(print.getKey() + print.getValue());
+                    nextCategorie.appendText(print.getKey());
                 }
             } catch (Exception b) {
                 b.printStackTrace();
@@ -147,102 +158,51 @@ public class Controller implements Initializable {
 
 // Entities & Saliences fix
 
-
             List<Category> categories = null;
             TranslateText translate = new TranslateText();
             try {
                 categories = cc.classifyFile(typeDetection.getFile(file));   //file.getAbsolutePath()));
+                int count = 0;
+                boolean check = false;
 
-                for (Category cat : categories) {
-                    if (category != null) {
-                        System.out.println("get cat " + cat.getCategory());
+                for (Map.Entry<String, Float> dd : cattt.entrySet()) {
+                    if (dd.getKey() != null) {
+                        float f = dd.getValue() * 100;
+                        int rounded = Math.round(f);
+                        String ss = String.valueOf(rounded);
+                        count += 1;
+                        if (rounded >= 80) {
+                            check = true;
+                        }
+//                        System.out.println("category " + cat.getCategory());
+///*vertaal naar nl*/
+//                        System.out.println("vertaling tat: " + translate.TranslateEngels(cat.getCategory()));
+//                        System.out.println("confidence " + cat.getConfidence());
 /*vertaal naar nl*/
-                        System.out.println("vertaling caat: " + translate.TranslateEngels(cat.getCategory()));
-                        System.out.println("get con " + cat.getConfidence());
-/*vertaal naar nl*/
-                        category.appendText(cat.getCategory() +" %"+ cat.getConfidence()+"--" +"\n");       //translate.TranslateEngels(
-                    } else {
+                        category.appendText(count + ": " + "[" + dd.getKey() + "] " + "%" + ss + "\n");          //translate.TranslateEngels(
+                    } else {  //entities.appendText(sal.getKey() + " , " + "%" + sali + "\n");
                         System.out.println("leeg");
                     }
                 }
-//                ________________________________________________________________________________________  Ga hier mee verder.....
-
+                if (check) {
+                    category.setStyle("-fx-control-inner-background:#4cf064");
+                    category.appendText("\nWordt gemetadateerd, want er zit 1 of meer confidence boven 80");
+                } else {
+                    category.setStyle("-fx-control-inner-background:#b60100");
+                    category.appendText("\nWordt niet gemetadateerd");
+                }
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
+//_______________________________________________________________________________________________________________________________________________
 
-//                ____________________
-
-            List<Float> ff = new ArrayList<>();
             Map<String, Float> fifi = new HashMap<>();
 
             assert categories != null;
             for (Category category : categories) {
                 fifi.put(category.getCategory(), category.getConfidence());
             }
-            for (Map.Entry<String, Float> tt : fifi.entrySet()) {
-                ff.add(tt.getValue());
-                System.out.println("value added to FF list" + ff);
-            }
-// hier is naar de klote
-            Map.Entry<String, Float> deMap = null;
-            float listMax = Collections.max(ff);
-            try {
-                System.out.println("listmax " + listMax);
-
-                for (Map.Entry<String, Float> rr : fifi.entrySet()) {
-                    if (rr.getValue().equals(listMax)) {
-                        deMap = rr;
-
-                        System.out.println(rr.getValue());
-                    } else {
-                        System.out.println("tjar");
-                    }
-                }
-            } catch (Exception raar) {
-                raar.printStackTrace();
-            }
-            String gek = "";
-//            for (Map.Entry<String, Float> nn : {                                 // hier mee verderrrrrrrrrr 13-1-18
-
-            boolean check = false;
-
-            for (Map.Entry<String, Float> l : fifi.entrySet()) {
-
-                float fl = l.getValue() * 100;
-                int rounded = Math.round(fl);
-                confidence.appendText(String.valueOf(rounded)+" ");
-                if (rounded >= 80) {
-                    check = true;
-
-                }
-            }
-
-            if (check) {
-                confidence.setStyle("-fx-control-inner-background:#4cf064");
-//                confidence.setba
-            }else{
-                confidence.setStyle("-fx-control-inner-background:#ff545e");
-            }
-
-
-//            if (Math.round(deMap.getValue()) >= 80) {
-//                System.out.println("ooooo is goedd");
-//                confidence.setStyle("-fx-control-inner-background:#41f226");
-//                confidence.appendText(String.valueOf(Math.round(Float.parseFloat(gek))));
-//                //onfidence.appendText("%" + String.valueOf(Math.round(Float.parseFloat(b))) + " ");
-//            } else {
-//                System.out.println("oooo Failed");
-//                confidence.setStyle("-fx-control-inner-background:#FF3333");
-//                confidence.appendText(gek);
-//                // confidence.appendText("%" + String.valueOf(Math.round(Float.parseFloat(b))) + " ");
-//            }
-
-
-//            Map<String, Float> mmap = new HashMap<>();
-//            if (enList != null) {
-//                for (Entity i : enList) mmap.put(i.getName(), i.getSalience());
-//            }
+//_______________________________________________________________________________________________________________________________________________
 
             for (Map.Entry<String, Float> sal : defeaultMap.entrySet()) {
                 Float omzettenFloat = sal.getValue() * 100;
@@ -251,11 +211,9 @@ public class Controller implements Initializable {
 
 /*entities*/
                 entities.appendText(sal.getKey() + " , " + "%" + sali + "\n");          //translate.TranslateEngels(
-
-                //salience.appendText("%" + Math.round(Float.parseFloat(afrondenFloat)) + " , ");
             }
 
-////  Subject fix
+//Subject fix
             TranslateText translateText = new TranslateText();
             List<Float> salien = new ArrayList<>();
 
@@ -276,7 +234,6 @@ public class Controller implements Initializable {
                     }
                 }
                 if (print != null) {
-
                     subject.appendText(print.getKey());   //translate.TranslateEngels(
                 } else {
                     System.out.println("error hashmap");
@@ -285,94 +242,139 @@ public class Controller implements Initializable {
                 e1.printStackTrace();
             }
         });
+// NEW BUTTON _______________________________________________________________________________________________________________________________________________________________
+        newButton.setOnAction(
+                e -> {
+                    file1.clear();
+                    file2.clear();
+                    file3.clear();
+                    file1Category.clear();
+                    file1Subject.clear();
+                    file2Category.clear();
+                    file2Subject.clear();
+                    file3Category.clear();
+                    file3Subject.clear();
 
-            newButton.setOnAction(
-                    e -> {
-                        test1.clear();
-                        test2.clear();
-                        test3.clear();
-                        finalTxt1.clear();
-                        finalTxt2.clear();
-                        finalTxt3.clear();
+                    List<File> list =
+                            fileChooser.showOpenMultipleDialog(newButton.getScene().getWindow());
+                    Analyze_Entities analyze = new Analyze_Entities();
+                    Classifying_Content cc = new Classifying_Content();
+                    TypeDetection typeDetection = new TypeDetection();
 
-                        List<File> list =
-                                fileChooser.showOpenMultipleDialog(newButton.getScene().getWindow());
-//File f = (File) fileChooser.showOpenMultipleDialog(newButton.getScene().getWindow());
-                        //TranslateText translateText = new TranslateText();
-                        Analyze_Entities analyze = new Analyze_Entities();
-                        Classifying_Content cc = new Classifying_Content();
-                        TypeDetection typeDetection = new TypeDetection();
+                    int count = 0;
+                    for (File i : list) {
+                        count++;
+                        fileNames.appendText(i.getName() + "\n");
+                        Map<String, Float> multiMap = new HashMap<>();
+                        List<Entity> entities = null;
+                        List<Category> categories = new ArrayList<>();
 
+                        System.out.println(i.getAbsolutePath());
+                        try {
+                            entities = analyze.analyzeEntities(typeDetection.getFile(i));
+                            categories = cc.classifyFile(typeDetection.getFile(i));
 
-                        int count = 0;
-                        for (File i : list) {
-                            Map<String, Float> multiMap = new HashMap<>();
-                            List<Entity> entities = null;
-                            List<Category> categories = new ArrayList<>();
-                            count++;
-                            //System.out.println(count);
-                            System.out.println(i.getAbsolutePath());
-                            try {
-                                entities = analyze.analyzeEntities(typeDetection.getFile(i));
-                                categories = cc.classifyFile(typeDetection.getFile(i));
+                            for (Entity multi : entities) {
 
-                                for (Entity multi : entities) {
-
-                                    multiMap.put(multi.getName(), multi.getSalience());
-                                }
-                            } catch (Exception e1) {
-                                e1.printStackTrace();
+                                multiMap.put(multi.getName(), multi.getSalience());
                             }
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
 
-                            try {
-
-                                //finalTxt1.appendText(category.getCategory() + " " + category.getConfidence() + "\n");
-
-                                String test = null;
-
-//                                test += i.getName().toString();  //="farshid";
-                                System.out.println("FARSHID");
-//                                System.out.println(test);
-                                System.out.println(count);
-                                System.out.println("FARSHOD");
-
-                                for (Map.Entry<String, Float> mmm : multiMap.entrySet()) {
-                                    String ta = "test" + String.valueOf(count);
-
-                                    if (findArea(ta) != null) {
-                                        Float m = (float) Math.round(mmm.getValue() * 100);
-                                        // test3.appendText("Entity: "+s.getName()+", Salience: "+m+"\n");
-                                        TextArea temp = findArea(ta);
-                                        temp.appendText("Entity: " + mmm.getKey() + ", Salience: " + m + "\n");  //normal s.getName van for loop
-                                    }
-                                }
-                                for (Category category : categories) {
-                                    if (count == 1) {
-                                        finalTxt1.appendText(category.getCategory() + " " + category.getConfidence() + "\n");
-                                    } else if (count == 2) {
-                                        finalTxt2.appendText(category.getCategory() + " " + category.getConfidence() + "\n");
-                                    } else if (count == 3) {
-                                        finalTxt3.appendText(category.getCategory() + " " + category.getConfidence() + "\n");
-                                    } else {
-                                        System.out.println("append error");
-                                    }
-                                }
-
-                            } catch (Exception ff) {
-                                ff.printStackTrace();
+                        for (Map.Entry<String, Float> mmm : multiMap.entrySet()) {
+                            String ta = "file" + String.valueOf(count);
+                            float f = mmm.getValue() * 100;
+                            int rounded = Math.round(f);
+                            String ss = String.valueOf(rounded);
+                            if (findArea(ta) != null) {
+                                TextArea temp = findArea(ta);
+                                temp.appendText("Entity: " + mmm.getKey() + " %" + ss + "\n");
                             }
                         }
-                    });
-        }
+                        List<Float> salien = new ArrayList<>();
+
+                        for (Map.Entry<String, Float> sal : multiMap.entrySet()) {
+                            salien.add(sal.getValue());
+                        }
+
+                        float max = 0;
+
+                        try {
+                            max += Collections.max(salien);
+
+                            Map.Entry<String, Float> print = null;
+
+                            for (Map.Entry<String, Float> en : multiMap.entrySet()) {
+                                if (en.getValue().equals(max)) {
+                                    print = en;
+                                    System.out.println("test 0" + print.getKey());
+                                }
+                            }
+
+                            String dubbelSubject1 = "";
+                            String dubbelSubject2 = "";
+                            String dubbelSubject3 = "";
+                            for (Category category : categories) {
+                                float f = category.getConfidence() * 100;
+                                int rounded = Math.round(f);
+                                String ss = String.valueOf(rounded);
+                                if (count == 1 && print != null) {
+                                    file1Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                    if (rounded >= 80) {
+                                        multiSuitable.appendText(i.getName() + "\n");
+                                        file1Category.setStyle("-fx-control-inner-background:#4cf064");
+//                                        category.appendText("\nWordt gemetadateerd, want er zit 1 of meer confidence boven 80");
+                                    }
+                                    dubbelSubject1 = print.getKey();
+
+                                } else if (count == 2 && print != null) {
+                                    file2Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                    dubbelSubject2 = print.getKey();
+                                    if (rounded >= 80) {
+                                        multiSuitable.appendText(i.getName() + "\n");
+                                        file2Category.setStyle("-fx-control-inner-background:#4cf064");
+                                    }
+                                    dubbelSubject2 = print.getKey();
+
+                                } else if (count == 3 && print != null) {
+                                    file3Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                    if (rounded >= 80) {
+                                        multiSuitable.appendText(i.getName() + "\n");
+                                        System.out.println("zest 3" + print.getKey());
+                                    }
+                                    dubbelSubject3 = print.getKey();
+                                    break;
+                                }
+                            }
+                            file1Subject.appendText(dubbelSubject1);
+                            file2Subject.appendText(dubbelSubject2);
+                            file3Subject.appendText(dubbelSubject3);
+
+
+                        } catch (Exception p) {
+                            p.printStackTrace();
+                        }
+
+
+//                        if (file3Category.getText().equals("")){
+//
+//                            file3Category.appendText("farshid test kir");
+//                        }
+//                        System.out.println(file3Category.getText() + "FARSHID");
+                    }
+                });
+    }
+
 
     private TextArea findArea(String area) {
         List<TextArea> areas = new ArrayList<TextArea>() {{
-            add(test1);
-            add(test2);
-            add(test3);
-            add(finalTxt1);
-            add(finalTxt2);
-            add(finalTxt3);
+            add(file1);
+            add(file2);
+            add(file3);
+            add(file1Category);
+            add(file2Category);
+            add(file3Category);
         }};
 
         TextArea temp1 = new TextArea();

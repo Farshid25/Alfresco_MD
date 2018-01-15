@@ -4,40 +4,83 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="603.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.Controller">
+<AnchorPane fx:id="anchorPane" prefHeight="892.0" prefWidth="1263.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.Controller">
 <children>
-   <Pane fx:id="pane" layoutX="5.0" layoutY="7.0" prefHeight="614.0" prefWidth="835.0">
+   <Pane fx:id="pane" layoutY="-2.0" prefHeight="894.0" prefWidth="1298.0" style="-fx-background-color: #e5e5e5;">
       <children>
-         <Button fx:id="newButton" layoutX="499.0" layoutY="168.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="144.0" text="Upload MultiFiles" />
-         <TextArea fx:id="entities" layoutX="16.0" layoutY="168.0" prefHeight="93.0" prefWidth="400.0" />
-            <Label layoutX="14.0" layoutY="60.0" text="Category" />
-            <Label layoutX="14.0" layoutY="108.0" text="Subject suggestion" />
-            <Label layoutX="14.0" layoutY="84.0" text="Confidence" />
-            <TextField fx:id="category" layoutX="81.0" layoutY="52.0" prefHeight="25.0" prefWidth="598.0" />
-            <TextField fx:id="confidence" layoutX="81.0" layoutY="80.0" prefHeight="25.0" prefWidth="290.0" />
-            <TextField fx:id="subject" layoutX="125.0" layoutY="113.0" prefHeight="25.0" prefWidth="247.0" />
-            <Label layoutX="14.0" layoutY="143.0" prefHeight="17.0" prefWidth="128.0" text="Entities &amp; Saliences" />
-            <TextArea fx:id="test1" layoutX="16.0" layoutY="298.0" prefHeight="75.0" prefWidth="400.0" />
-            <Button fx:id="btn1" layoutX="499.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Upload File" />
-            <TextArea fx:id="test2" layoutX="14.0" layoutY="414.0" prefHeight="66.0" prefWidth="400.0" />
-            <TextArea fx:id="test3" layoutX="14.0" layoutY="518.0" prefHeight="66.0" prefWidth="400.0" />
-            <Label layoutX="14.0" layoutY="268.0" text="MetaData File 1" />
-            <Label layoutX="20.0" layoutY="385.0" text="MetaData File 2" />
-            <Label layoutX="20.0" layoutY="491.0" text="MetaData File 3" />
-            <TextArea fx:id="finalTxt1" layoutX="511.0" layoutY="298.0" prefHeight="75.0" prefWidth="312.0" />
-            <Label layoutX="511.0" layoutY="268.0" text="Multi stuff TEMP" />
-            <TextArea fx:id="finalTxt2" layoutX="499.0" layoutY="393.0" prefHeight="60.0" prefWidth="325.0" />
-            <TextArea fx:id="finalTxt3" layoutX="505.0" layoutY="491.0" prefHeight="75.0" prefWidth="325.0" />
-            <Label layoutX="429.0" layoutY="397.0" prefHeight="17.0" prefWidth="69.0" text="&lt;--------&gt;" />
-            <Label layoutX="436.0" layoutY="491.0" text="&lt;--------&gt;" />
-            <Label layoutX="429.0" layoutY="566.0" text="&lt;--------&gt;" />
-            <TextField fx:id="superCategorie" layoutX="340.0" layoutY="23.0" prefHeight="25.0" prefWidth="290.0" />
-            <Label layoutX="13.0" layoutY="27.0" text="FileName" />
-            <TextField fx:id="fileName" layoutX="81.0" layoutY="23.0" />
-            <Label layoutX="248.0" layoutY="27.0" text="superCategorie" />
+         <Button fx:id="newButton" layoutX="1002.0" layoutY="362.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" style="-fx-background-color: #ef7211;" text="Upload MultiFiles" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+         <TextArea fx:id="entities" layoutX="132.0" layoutY="80.0" prefHeight="82.0" prefWidth="279.0" />
+            <Label layoutX="24.0" layoutY="186.0" prefHeight="60.0" prefWidth="72.0" text="Category &amp;&#10;Confidence" />
+            <Label layoutX="445.0" layoutY="84.0" text="Subject suggestion" />
+            <TextField fx:id="subject" layoutX="564.0" layoutY="80.0" prefHeight="25.0" prefWidth="247.0" />
+            <Label layoutX="27.0" layoutY="80.0" prefHeight="37.0" prefWidth="66.0" text="Entities &amp; &#10;Saliences" />
+            <Button fx:id="btn1" layoutX="1008.0" layoutY="26.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: #ef7211;" text="Upload File" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <TextField fx:id="nextCategorie" layoutX="133.0" layoutY="299.0" prefHeight="25.0" prefWidth="336.0" />
+            <Label layoutX="27.0" layoutY="45.0" text="FileName" />
+            <TextField fx:id="fileName" layoutX="132.0" layoutY="41.0" />
+            <Label layoutX="24.0" layoutY="303.0" text="Superior Category" />
+            <Label layoutX="23.0" layoutY="335.0" prefHeight="20.0" prefWidth="1148.0" text="_____________________________________________________________________________________________________________________________________________________________________________________________________" textFill="#ef7211" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect></Label>
+            <Label layoutX="33.0" layoutY="368.0" text="FileNames" />
+            <Label layoutX="325.0" layoutY="477.0" prefHeight="17.0" prefWidth="30.0" text="---&gt;" />
+            <TextArea fx:id="file1Category" layoutX="349.0" layoutY="442.0" prefHeight="103.0" prefWidth="336.0" />
+            <Label layoutX="420.0" layoutY="415.0" text="Category &amp; confidence" />
+            <Label layoutX="323.0" layoutY="603.0" prefHeight="17.0" prefWidth="30.0" text="---&gt;" />
+            <TextArea fx:id="file2Category" layoutX="349.0" layoutY="560.0" prefHeight="103.0" prefWidth="336.0" />
+            <Label layoutX="718.0" layoutY="415.0" text="Subject suggestion" />
+            <Label layoutX="683.0" layoutY="477.0" prefHeight="17.0" prefWidth="30.0" text="---&gt;" />
+            <Label layoutX="683.0" layoutY="584.0" prefHeight="17.0" prefWidth="30.0" text="---&gt;" />
+            <Label layoutX="742.0" layoutY="749.0" prefHeight="17.0" prefWidth="20.0" text="---&gt;" />
+            <TextArea fx:id="file1Subject" layoutX="713.0" layoutY="442.0" prefHeight="75.0" prefWidth="271.0" />
+            <TextArea fx:id="file2Subject" layoutX="713.0" layoutY="563.0" prefHeight="60.0" prefWidth="271.0" />
+            <TextArea fx:id="file3Subject" layoutX="713.0" layoutY="669.0" prefHeight="66.0" prefWidth="271.0" />
+            <Label fx:id="label" layoutX="1015.0" layoutY="643.0" prefHeight="25.0" prefWidth="205.0" text="Incentro">
+               <font>
+                  <Font name="Algerian" size="45.0" />
+               </font>
+               <effect>
+                  <Reflection bottomOpacity="1.0" fraction="1.0" topOpacity="0.23" />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.5571428571428572" endY="0.5095238095238096" startX="0.5523809523809524" startY="0.6190476190476191">
+                     <stops>
+                        <Stop color="#ef7211" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="997.0" layoutY="415.0" prefHeight="17.0" prefWidth="180.0" text="Files suitable for metadating " />
+            <TextArea fx:id="category" layoutX="132.0" layoutY="183.0" prefHeight="110.0" prefWidth="610.0" />
+            <TextArea fx:id="multiSuitable" layoutX="1002.0" layoutY="437.0" prefHeight="103.0" prefWidth="247.0" />
+            <TextArea fx:id="fileNames" layoutX="134.0" layoutY="360.0" prefHeight="66.0" prefWidth="191.0" />
+            <TextArea fx:id="file1" layoutX="133.0" layoutY="440.0" prefHeight="103.0" prefWidth="191.0" />
+            <Label layoutX="33.0" layoutY="440.0" text="Entities &amp; &#10;Saliences &#10;File 1" />
+            <TextArea fx:id="file2" layoutX="133.0" layoutY="560.0" prefHeight="103.0" prefWidth="191.0" />
+            <Label layoutX="33.0" layoutY="560.0" text="Entities &amp; &#10;Saliences &#10;File 2" />
+            <Label layoutX="323.0" layoutY="716.0" prefHeight="17.0" prefWidth="30.0" text="---&gt;" />
+            <TextArea fx:id="file3" layoutX="132.0" layoutY="677.0" prefHeight="103.0" prefWidth="191.0" />
+            <Label layoutX="33.0" layoutY="677.0" text="Entities &amp; &#10;Saliences &#10;File 3" />
+            <TextArea fx:id="file3Category" layoutX="349.0" layoutY="677.0" prefHeight="103.0" prefWidth="336.0" />
       </children>
    </Pane>
 </children>
