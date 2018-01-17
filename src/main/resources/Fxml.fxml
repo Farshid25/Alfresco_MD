@@ -70,7 +70,7 @@
                </textFill>
             </Label>
             <Label layoutX="997.0" layoutY="415.0" prefHeight="17.0" prefWidth="180.0" text="Files suitable for metadating " />
-            <TextArea fx:id="category" layoutX="132.0" layoutY="183.0" prefHeight="110.0" prefWidth="610.0" />
+            <TextArea fx:id="category" layoutX="132.0" layoutY="183.0" prefHeight="110.0" prefWidth="535.0" />
             <TextArea fx:id="multiSuitable" layoutX="1002.0" layoutY="437.0" prefHeight="103.0" prefWidth="247.0" />
             <TextArea fx:id="fileNames" layoutX="134.0" layoutY="360.0" prefHeight="66.0" prefWidth="191.0" />
             <TextArea fx:id="file1" layoutX="133.0" layoutY="440.0" prefHeight="103.0" prefWidth="191.0" />

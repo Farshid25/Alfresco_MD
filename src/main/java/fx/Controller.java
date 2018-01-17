@@ -58,15 +58,15 @@ public class Controller implements Initializable {
     @FXML
     public TextArea file1Category;
     @FXML
-    private TextArea file1Subject;
-    @FXML
     public TextArea file2Category;
+    @FXML
+    private TextArea file3Category;
+    @FXML
+    private TextArea file1Subject;
     @FXML
     private TextArea file2Subject;
     @FXML
-    public TextArea file3Category;
-    @FXML
-    private TextArea file3Subject;
+    public TextArea file3Subject;
     @FXML
     private TextArea category;
     @FXML
@@ -84,10 +84,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-//        text.setText("Incentro");
-//        text.setFont(Font.font(null, FontWeight.BOLD, 60));
-//        text.setFill(Color.ORANGE);
 
         btn1.setOnAction(e -> {
             category.clear();
@@ -127,12 +123,6 @@ public class Controller implements Initializable {
                 for (Map.Entry<String, Float> mm : cattt.entrySet()) {
                     test.add(mm.getValue());
                 }
-            } catch (TikaException e1) {
-                e1.printStackTrace();
-            } catch (SAXException e1) {
-                e1.printStackTrace();
-            } catch (IOException e1) {
-                e1.printStackTrace();
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
@@ -186,21 +176,13 @@ public class Controller implements Initializable {
                 }
                 if (check) {
                     category.setStyle("-fx-control-inner-background:#4cf064");
-                    category.appendText("\nWordt gemetadateerd, want er zit 1 of meer confidence boven 80");
+                    category.appendText("\nWordt gemetadateerd, want er zit 1 of meer Categorie met Confidence boven %80 bij!");
                 } else {
                     category.setStyle("-fx-control-inner-background:#b60100");
                     category.appendText("\nWordt niet gemetadateerd");
                 }
             } catch (Exception e1) {
                 e1.printStackTrace();
-            }
-//_______________________________________________________________________________________________________________________________________________
-
-            Map<String, Float> fifi = new HashMap<>();
-
-            assert categories != null;
-            for (Category category : categories) {
-                fifi.put(category.getCategory(), category.getConfidence());
             }
 //_______________________________________________________________________________________________________________________________________________
 
@@ -245,6 +227,7 @@ public class Controller implements Initializable {
 // NEW BUTTON _______________________________________________________________________________________________________________________________________________________________
         newButton.setOnAction(
                 e -> {
+                    fileNames.clear();
                     file1.clear();
                     file2.clear();
                     file3.clear();
@@ -262,26 +245,38 @@ public class Controller implements Initializable {
                     TypeDetection typeDetection = new TypeDetection();
 
                     int count = 0;
+                    List<Float> salien = new ArrayList<>();
+                    List<Entity> entities;
+                    Map<String, Float> multiMap = new HashMap<>();
+                    List<Category> categories = new ArrayList<>();
                     for (File i : list) {
                         count++;
+                        System.out.println("Eerste" + count);
                         fileNames.appendText(i.getName() + "\n");
-                        Map<String, Float> multiMap = new HashMap<>();
-                        List<Entity> entities = null;
-                        List<Category> categories = new ArrayList<>();
 
                         System.out.println(i.getAbsolutePath());
                         try {
+                                            //hier heen geplaatst. was buiten for loop
                             entities = analyze.analyzeEntities(typeDetection.getFile(i));
                             categories = cc.classifyFile(typeDetection.getFile(i));
 
                             for (Entity multi : entities) {
 
                                 multiMap.put(multi.getName(), multi.getSalience());
-                            }
-                        } catch (Exception e1) {
+
+                            }} catch (Exception e1) {
                             e1.printStackTrace();
                         }
 
+//Test gevaletje
+                            for (Map.Entry<String, Float> test : multiMap.entrySet()) {
+                                System.out.println("test ent: " + test.getKey() + " & test val " + test.getValue() + " ");
+
+                            }
+
+                        for (Map.Entry<String, Float> sal : multiMap.entrySet()) {
+                            salien.add(sal.getValue());
+                        }
                         for (Map.Entry<String, Float> mmm : multiMap.entrySet()) {
                             String ta = "file" + String.valueOf(count);
                             float f = mmm.getValue() * 100;
@@ -290,12 +285,9 @@ public class Controller implements Initializable {
                             if (findArea(ta) != null) {
                                 TextArea temp = findArea(ta);
                                 temp.appendText("Entity: " + mmm.getKey() + " %" + ss + "\n");
+                            } else {
+                                System.out.println("wtf er is iets null");
                             }
-                        }
-                        List<Float> salien = new ArrayList<>();
-
-                        for (Map.Entry<String, Float> sal : multiMap.entrySet()) {
-                            salien.add(sal.getValue());
                         }
 
                         float max = 0;
@@ -312,69 +304,77 @@ public class Controller implements Initializable {
                                 }
                             }
 
-                            String dubbelSubject1 = "";
-                            String dubbelSubject2 = "";
-                            String dubbelSubject3 = "";
-                            for (Category category : categories) {
-                                float f = category.getConfidence() * 100;
-                                int rounded = Math.round(f);
-                                String ss = String.valueOf(rounded);
-                                if (count == 1 && print != null) {
-                                    file1Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
-                                    if (rounded >= 80) {
-                                        multiSuitable.appendText(i.getName() + "\n");
-                                        file1Category.setStyle("-fx-control-inner-background:#4cf064");
+
+                                String dubbelSubject1 = "";
+                                String dubbelSubject2 = "";
+                                String Subject3 = "";
+                                for (Category category : categories) {
+                                    float f = category.getConfidence() * 100;
+                                    int rounded = Math.round(f);
+                                    String ss = String.valueOf(rounded);
+                                    if (count == 1 && print != null) {
+                                        System.out.println("second count" + count);
+                                        file1Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                        if (rounded >= 80) {
+                                            multiSuitable.appendText(i.getName() + "\n");
+                                            file1Category.setStyle("-fx-control-inner-background:#4cf064");
 //                                        category.appendText("\nWordt gemetadateerd, want er zit 1 of meer confidence boven 80");
-                                    }
-                                    dubbelSubject1 = print.getKey();
+                                        }
+                                        dubbelSubject1 = print.getKey();
 
-                                } else if (count == 2 && print != null) {
-                                    file2Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
-                                    dubbelSubject2 = print.getKey();
-                                    if (rounded >= 80) {
-                                        multiSuitable.appendText(i.getName() + "\n");
-                                        file2Category.setStyle("-fx-control-inner-background:#4cf064");
-                                    }
-                                    dubbelSubject2 = print.getKey();
+                                    } else if (count == 2 && print != null) {
+                                        System.out.println("2" + count);
+                                        file2Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                        if (rounded >= 80) {
+                                            multiSuitable.appendText(i.getName() + "\n");
+                                            file2Category.setStyle("-fx-control-inner-background:#4cf064");
+                                        }
+                                        dubbelSubject2 = print.getKey();
 
-                                } else if (count == 3 && print != null) {
-                                    file3Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
-                                    if (rounded >= 80) {
-                                        multiSuitable.appendText(i.getName() + "\n");
-                                        System.out.println("zest 3" + print.getKey());
+                                    } else if (count == 3 && print != null && file3Category.getText().equals("")) {
+                                        System.out.println("ja count 3" + count);
+                                        file3Category.appendText("[" + category.getCategory() + "]" + " %" + ss + "\n");
+                                        System.out.println("ja 3 append");
+                                        if (rounded >= 80) {
+                                            multiSuitable.appendText(i.getName() + "\n");
+                                            System.out.println("zest 3" + print.getKey());
+                                        }
+                                        Subject3 = print.getKey();
+
+                                    } else {
+                                        System.out.println("fuff");
                                     }
-                                    dubbelSubject3 = print.getKey();
-                                    break;
                                 }
-                            }
-                            file1Subject.appendText(dubbelSubject1);
-                            file2Subject.appendText(dubbelSubject2);
-                            file3Subject.appendText(dubbelSubject3);
+                                file1Subject.appendText(dubbelSubject1);
+                                file2Subject.appendText(dubbelSubject2);
+                                file3Subject.appendText(Subject3);
 
 
                         } catch (Exception p) {
                             p.printStackTrace();
                         }
-
-
-//                        if (file3Category.getText().equals("")){
-//
-//                            file3Category.appendText("farshid test kir");
-//                        }
-//                        System.out.println(file3Category.getText() + "FARSHID");
                     }
+
+//                    }if (file3Category == null){
+//                        System.out.println("file 3 is null");
+//                        file3Category.appendText("farshid test kir");
+//                    }else if (file3Category.getText().equals("")){
+//                        System.out.println("file 3 is leeg");
+//                    }else if(file2Category.getText() == null){
+//                        System.out.println("file 2 is null");
+//                    }
+//                    System.out.println(file3Category.getText() + "FARSHID");
                 });
     }
-
 
     private TextArea findArea(String area) {
         List<TextArea> areas = new ArrayList<TextArea>() {{
             add(file1);
             add(file2);
             add(file3);
-            add(file1Category);
-            add(file2Category);
-            add(file3Category);
+//            add(file1Category);
+//            add(file2Category);
+//            add(file3Category);
         }};
 
         TextArea temp1 = new TextArea();

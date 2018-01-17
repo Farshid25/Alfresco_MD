@@ -32,37 +32,37 @@ public class TypeDetection {
                 result += apacke_tika_docx.readFile(file);
                 break;
 //
-//            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": //  .XLSX
-//
-//                System.out.println("Your File Type is: " + type);
-//                Apacke_Tika_Docx xlsx = new Apacke_Tika_Docx();
-//                result += xlsx.readFile(file);
-//                break;
-//
-//            case "application/vnd.openxmlformats-officedocument.presentationml.presentation": // .PPTX
-//
-//                System.out.println("Your File Type is: " + type);
-//                Apacke_Tika_Docx pptx = new Apacke_Tika_Docx();
-//                result += pptx.readFile(file);
-//                break;
-//
-//            case "application/pdf":                                         //.pdf
-//                System.out.println("Your File Type is: " + type);
-//                Apache_Tika_PDF apache_tika_pdf = new Apache_Tika_PDF();
-//                result += apache_tika_pdf.readFile(file);
-//                break;
-//
-//            case "application/vnd.oasis.opendocument.text":                 //.odt  open document text (oude Docx)
-//                System.out.println("Your File Type is: " + type);
-//                Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
-//                result += apache_tika_odt.readFile(file);
-//                break;
-//
-//            case "text/plain":
-//                System.out.println("Your File Type is: " + type);
-//                Apache_Tika_TEXT apache_tika_text = new Apache_Tika_TEXT();
-//                result += apache_tika_text.readFile(file);
-//                break;
+            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": //  .XLSX
+
+                System.out.println("Your File Type is: " + type);
+                Apacke_Tika_Docx xlsx = new Apacke_Tika_Docx();
+                result += xlsx.readFile(file);
+                break;
+
+            case "application/vnd.openxmlformats-officedocument.presentationml.presentation": // .PPTX
+
+                System.out.println("Your File Type is: " + type);
+                Apacke_Tika_Docx pptx = new Apacke_Tika_Docx();
+                result += pptx.readFile(file);
+                break;
+
+            case "application/pdf":                                         //.pdf
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_PDF apache_tika_pdf = new Apache_Tika_PDF();
+                result += apache_tika_pdf.readFile(file);
+                break;
+
+            case "application/vnd.oasis.opendocument.text":                 //.odt  open document text (oude Docx)
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_ODT apache_tika_odt = new Apache_Tika_ODT();
+                result += apache_tika_odt.readFile(file);
+                break;
+
+            case "text/plain":
+                System.out.println("Your File Type is: " + type);
+                Apache_Tika_TEXT apache_tika_text = new Apache_Tika_TEXT();
+                result += apache_tika_text.readFile(file);
+                break;
         }
 
         return result;

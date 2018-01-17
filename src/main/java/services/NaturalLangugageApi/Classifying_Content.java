@@ -8,6 +8,7 @@ import services.content_reader.Apache_Tika_PDF;
 import services.content_reader.Apache_Tika_TEXT;
 import services.content_reader.Apacke_Tika_Docx;
 
+import java.io.File;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,8 @@ import java.util.List;
 
 public class Classifying_Content {
 
-     public List<Category> classifyFile(String path) throws Exception {
-         List<Category> catList = new ArrayList<>();
+    public List<Category> classifyFile(String path) throws Exception {
+        List<Category> catList = new ArrayList<>();
         //public Category classifyFile(String path, Category cat ) throws Exception {
         try (LanguageServiceClient language = LanguageServiceClient.create()) {
 
@@ -38,21 +39,23 @@ public class Classifying_Content {
                 catList.add(new Category(category.getName(), category.getConfidence()));
             }
         }
-         return catList;
+        return catList;
     }
 
-    public static void main(String[] args) throws Exception {
-        Classifying_Content cc = new Classifying_Content();
-        Apacke_Tika_Docx apacheDoc = new Apacke_Tika_Docx();
-        Apache_Tika_PDF pdfReader  = new Apache_Tika_PDF();
-        Apache_Tika_ODT odt = new Apache_Tika_ODT();
-        //Category category = new Category();
-
-//        try {
-//         ArrayList<Category> categories = cc.classifyFile(apacheDoc.readFile("src\\main\\Aanvullende_Files\\EthicsFinal.docx\\"));
-//           //  cc.classifyFile(apacheDoc.readFile("src\\main\\Aanvullende_Files\\EthicsFinal.docx\\"),category);
+//    public static void main(String[] args) throws Exception {
+//        Classifying_Content cc = new Classifying_Content();
+//        Apacke_Tika_Docx apacheDoc = new Apacke_Tika_Docx();
+//        Apache_Tika_PDF pdfReader = new Apache_Tika_PDF();
+//        Apache_Tika_ODT odt = new Apache_Tika_ODT();
+//        //Category category = new Category();
 //
-//            //ArrayList<Category> pdf = cc.classifyFile(pdfReader.readFile("src\\main\\Aanvullende_Files\\Sollicitatie.docx\\"));
+//        try {
+//            File f = new File("src\\main\\Aanvullende_Files\\MS1.docx\\");
+//
+//            List<Category> categories = cc.classifyFile(apacheDoc.readFile(f));
+//            //  cc.classifyFile(apacheDoc.readFile("src\\main\\Aanvullende_Files\\EthicsFinal.docx\\"),category);
+////
+////            //ArrayList<Category> pdf = cc.classifyFile(pdfReader.readFile("src\\main\\Aanvullende_Files\\Sollicitatie.docx\\"));
 //            for (Category category : categories) {
 //
 //                if (category != null) {
@@ -64,23 +67,11 @@ public class Classifying_Content {
 //                } else {
 //                    System.out.println("leeeeeg");
 //                }
-//
-//            } } catch (Exception e) {
+//            }
+//        }catch (Exception e){
 //            e.printStackTrace();
-//        }
-    }
-}
-//        Category ca1 = new Category();
-//        Classifying_Content cf = new Classifying_Content();
-//        Apacke_Tika_Docx ap = new Apacke_Tika_Docx();
-//
-//        for (Category cat : cf.classifyFile(ap.readFile("src\\main\\Aanvullende_Files\\MS1.docx"),ca1)){
-//            System.out.printf("Category: %s",cat.getCategory() + "\n");
-//            System.out.printf("Confidence: %s", cat.getConfidence() + "\n");
-//            //cat.getCategory();
-//        }
 //    }
-
+}
 
 
 
